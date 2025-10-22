@@ -1,0 +1,6 @@
+poetry run python3 tiedostonimi
+
+poetryllä ollaan virtuaaliympäristön sisällä -> lopullisessa ohjelmassa varmaan halutaan olla myös
+että toimii eri koneilla
+
+eval $(poetry env activate)   siirtyy virtuaaliympäristön sisälle
