@@ -21,7 +21,7 @@ class UI:
 
 
 window = Tk()
-window.title("TkInter example")
+window.title("TkInter esimerkki")
 
 ui = UI(window)
 ui.start()
