@@ -46,8 +46,12 @@ class UI:
 
         [textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5)) for textfield in texts]
 
+        frame = tk.Frame(self._root)
+        frame.config(relief="flat",borderwidth=0,highlightthickness=0)
+        frame.pack()
+
         valinta = ttk.Combobox(
-            self._root,
+            frame,
             values=textfields.oletusvaihtoehdot,
             width=50,
             state="readonly",
@@ -56,41 +60,46 @@ class UI:
         valinta.current(1)
         valinta.pack(pady=(5, 10))
 
-        tulos_label = tk.Label(self._root, text="", font=("Arial", 12))
+        tulos_label = tk.Label(frame, text="", font=("Arial", 12))
         tulos_label.pack(pady=10)
+
+        tehty = False
 
         # Funktio tarkistukseen
         def tarkista_vastaus():
+            nonlocal tehty
             valittu = valinta.get()
             if valittu == textfields.oletusvastaus:
                 tulos_label.config(text="Juuri näin!", fg="green")
-                textfield = tk.Text(
-                master=self._root,
-                font=("Arial", 12),
-                wrap="word",
-                bg="white",
-                relief="flat",
-                borderwidth=0,
-                highlightthickness=0
-                )
-                textfield.insert("1.0", valittu)
-                self.format_text(textfield)
-                textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
-                
+                if not tehty:
+                    tehty = True
+                    textfield = tk.Text(
+                    master=self._root,
+                    font=("Arial", 12),
+                    wrap="word",
+                    bg="white",
+                    relief="flat",
+                    borderwidth=0,
+                    highlightthickness=0
+                    )
+                    textfield.insert("1.0", valittu)
+                    self.format_text(textfield)
+                    textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
+
             elif valittu=="a ja b ovat kokonaislukuja":
                 tulos_label.config(text="a ja b ovat kokonaislukuja, mutta tiedämmekö niistä vielä jotain muuta?", fg="blue")
             else:
                 tulos_label.config(text="Yritä uudelleen", fg="blue")
 
         # Tarkistusnappi
-        tarkista_nappi = ttk.Button(self._root, text="Tarkista", command=tarkista_vastaus)
+        tarkista_nappi = ttk.Button(frame, text="Tarkista", command=tarkista_vastaus)
         tarkista_nappi.pack(pady=10)
 
-        # Muut kontrollit
-        button = ttk.Button(self._root, text="Jatka")
-        entry = ttk.Entry(self._root)
-        checkbutton = ttk.Checkbutton(self._root, text="Check button")
+    #    def remove_components(components):
+     #       for component in components:
+      #          component.pack_forget()  # poistaa labelin näkyvistä
+
+        button = ttk.Button(frame, text="Jatka", command=frame.pack_forget)
+        button.pack()
 
         button.pack(pady=(5, 10))
-        entry.pack(pady=(0, 10))
-        checkbutton.pack(pady=(0, 10))
