@@ -13,7 +13,21 @@ class UI:
         text = textfield.get("1.0", "end-1c")
         lines = text.split('\n')
         height = min(max(len(lines), 1), 15)
-        textfield.config(height=height+1, width=60, wrap="word", state=tk.DISABLED,)
+        textfield.config(height=height, width=60, wrap="word", state=tk.DISABLED,)
+
+    def new_text(self, text):
+        textfield = tk.Text(
+        master=self._root,
+        font=("Arial", 12),
+        wrap="word",
+        bg="white",
+        relief="flat",
+        borderwidth=0,
+        highlightthickness=0
+        )
+        textfield.insert("1.0", text)
+        self.format_text(textfield)
+        textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
 
     # näyttää näkymän
     def start(self):
@@ -89,17 +103,12 @@ class UI:
             elif valittu=="a ja b ovat kokonaislukuja":
                 tulos_label.config(text="a ja b ovat kokonaislukuja, mutta tiedämmekö niistä vielä jotain muuta?", fg="blue")
             else:
-                tulos_label.config(text="Yritä uudelleen", fg="blue")
+                tulos_label.config(text="Onko tämä oletus vai väite?", fg="blue")
 
         # Tarkistusnappi
         tarkista_nappi = ttk.Button(frame, text="Tarkista", command=tarkista_vastaus)
         tarkista_nappi.pack(pady=10)
 
-    #    def remove_components(components):
-     #       for component in components:
-      #          component.pack_forget()  # poistaa labelin näkyvistä
-
-        button = ttk.Button(frame, text="Jatka", command=frame.pack_forget)
-        button.pack()
-
+        button = ttk.Button(frame, text="Jatka", command=lambda: (frame.pack_forget()
+                                                                ,self.new_text(textfields.oletusjatko)))
         button.pack(pady=(5, 10))

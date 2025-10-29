@@ -1,6 +1,6 @@
 tehtavananto = "Todista: Kahden parittoman luvun a ja b tulo on pariton luku."
 
-alkuteksti = "Ensin täytyy löytää oletus ja väite, jota ollaan ratkaisemassa.Oletus on jokin tieto, \njosta lähdetään liikkeelle ja jota voimme pitää tunnettuna. Lause Kahden parittoman kokonaisluvun tulo on pariton kokonaisluku voitaisiin myös ilmaista muodossa:"
+alkuteksti = "Ensin täytyy löytää oletus ja väite, jota ollaan ratkaisemassa.Oletus on jokin tieto, josta lähdetään liikkeelle ja jota voimme pitää tunnettuna. \nLause 'Kahden parittoman kokonaisluvun tulo on pariton kokonaisluku' voitaisiin myös ilmaista muodossa:"
 
 vaite_muotoilu = "Jos [oletus], niin [väite]."
 
@@ -13,3 +13,5 @@ oletusvaihtoehdot = [
 ]
 
 oletusvastaus = "a ja b ovat parittomia kokonaislukuja"
+
+oletusjatko = "Voidaan merkitä lukuja kirjaimilla a ja b. Kokonaislukujen joukkoa merkitään kirjaimella \u2124, ja joukkoon kuulumista merkillä \u2208.\nVoimme siis merkitä: a, b \u2208 \u2124.\nMikä väite tällöin on?"
