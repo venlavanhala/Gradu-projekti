@@ -12,4 +12,14 @@ oletusvaihtoehdot = [
 
 oletusvastaus = "a ja b ovat parittomia kokonaislukuja"
 
-oletusjatko = "Voidaan merkitä lukuja kirjaimilla a ja b. Kokonaislukujen joukkoa merkitään kirjaimella \u2124, ja joukkoon kuulumista merkillä \u2208.\nVoimme siis merkitä: a, b \u2208 \u2124.\nMikä väite tällöin on?"
+oletusjatko = "Voidaan merkitä lukuja kirjaimilla a ja b. Kokonaislukujen joukkoa merkitään kirjaimella \u2124, ja joukkoon kuulumista merkillä \u2208.\nVoimme siis merkitä: a, b \u2208 \u2124.\nMikä väite tällöin on?\n\nVäite:"
+
+vaitevaihtoehdot = [
+    "a \u00B7 b on parillinen kokonaisluku",
+    "a \u00B7 b on kokonaisluku",
+    "lukujen a ja b tulo on pariton luku"
+]
+
+vaitevastaus = ["a \u00B7 b on parillinen kokonaisluku", "lukujen a ja b tulo on pariton luku"]
+
+vaitejatko = "Parilliset luvut voidaan ilmaista muodossa l=2k, koska parilliset luvut ovat aina jaollisia luvulla 2."

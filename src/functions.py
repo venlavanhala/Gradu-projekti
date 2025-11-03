@@ -1,10 +1,6 @@
 import tkinter as tk
+from edit_screen import *
 
-def format_text(textfield):
-    text = textfield.get("1.0", "end-1c")
-    lines = text.split('\n')
-    height = min(max(len(lines), 1), 15)
-    textfield.config(height=height+2, width=60, wrap="word", state=tk.DISABLED,)
 
 def new_text(screeni, text):
     textfield = tk.Text(
@@ -36,6 +32,7 @@ def tarkista_monivalinta(screeni, valinta, oikea, palaute):
         textfield.insert("1.0", valittu)
         format_text(textfield)
         textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
+
 
     elif valittu=="a ja b ovat kokonaislukuja":
         palaute.config(text="a ja b ovat kokonaislukuja, mutta tiedämmekö niistä vielä jotain muuta?", fg="blue")
