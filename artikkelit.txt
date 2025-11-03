@@ -1,0 +1,49 @@
+Aiheita: todistaminen, todistamisen vaikeukset, lukuteorian opetus, lukuteoria lukiossa, looginen päättely lukio
+
+
+Anna-Kaisa Viertola, TODISTAMINEN LUKION PITKÄSSÄ MATEMATIIKASSA:
+"9.2 KÄYTÄNNÖN OHJEITA TODISTAMISEN KIRJOITTAMISEKSI
+Ohessa on koottuna eri lähteistä käytännön ohjeita todistamisen kirjoittamiseen. Tällaisista ohjeista
+voisi tehdä pienen seinäplakaatin matematiikan luokan seinälle. Siitä voisi käydä hakemassa ideoita
+todistustehtävän ratkaisuun, jos ei meinaa sujua.
+1. Mieti, mitä saa olettaa ennalta tunnetuksi ja mitä on todistettava.
+2. Erota selkeäsi toisistaan oletus ja väite. Kirjaa ne ylös selvästi.
+3. Mieti, mitä osia väitteestä on tarpeen todistaa. Osaa väitteestä voi olla triviaalia tai
+ennestään todistettua. Kannattaako väite jakaa eri tapauksiin?
+4. Turhaa työtä voidaan välttää. Jos todistus sisältää kaksi eri tapausta tai eri suunnat ja
+molemmat todistetaan samalla tavalla, riittää todistaa toinen ja kirjoittaa: ”Toinen
+tapaus/suunta vastaavasti.”.
+5. Mikä on kunkin päättelyvaiheen suunta (֜, ֚, ֞). Yhtäpitävyyttä todistettaessa päättely on
+tehtävä molempiin suuntiin. Joukkoja samoiksi osoitettaessa sisältyminen on todistettava
+molempiin suuntiin.
+6. Huomaa, että joissain todistuksissa nuolet voidaan kääntää ja saadaankin todistettua kerralla
+molemmat suunnat.
+7. Kaikkia alkioita koskevaa väitettä todeksi osoitettaessa on osoitettava että väite todella pätee
+kaikissa mahdollisissa tapauksissa. Väitettä vääräksi ositettaessa riittää löytää yksi
+vastaesimerkki.
+8. Käytä hyväksi aksioomia, määritelmiä ja jo todistettuja lauseita. Muista mainita, mitä tulosta
+käytät.
+9. Arvioi ja valitse sopiva todistusmenetelmä.
+10. Luonnollisia lukuja koskevat väitteet voidaan usein todistaa induktiotodistusta käyttäen.
+11. Muista, että ”yksi kuva kertoo enemmän kuin tuhat sanaa”.
+12. Antiteesiä käyttäessäsi tarkista, että väitteen negaatio on oikein muodostettu.
+13. Joskus voi olla helpompaa keksiä todistus liikkumalla takaperin väitteestä oletukseen ja
+kirjoittaa todistus sitten puhtaaksi oikeinpäin, jos mahdollista.
+14. Hyvä idea voi olla myös kirjoittaa todistuksen ensimmäinen ja viimeinen lause ja yrittää
+täyttää välissä oleva kuilu kulkemalla siinä edestakaisin. Näin päämäärä on näkyvissä ja
+pysyy mielessä. 
+31
+15. Muista että molemmille puolille lisääminen tai molemmilta puolilta vähentäminen ei muuta
+yhtälöä eikä epäyhtälöä ja on monesti toimiva kikka. Binomikaavat kannattaa pitää myös
+mielessä. Joskus nollan lisääminen auttaa ratkaisevasti eteenpäin todistuksessa.
+16. Todistustehtävästä voi ensin muokata helpomman tehtävän perusperiaatteet säilyttäen (esim.
+kolmiulotteisesta kaksiulotteiseen) ja etsiä ensin todistuksen helpompaan versioon ja palata
+sitten alkuperäiseen.
+17. Muista, että tai (ڀ (ei matematiikassa tarkoita täysin samaa kuin puhutussa kielessä.
+18. Joskus voi helpottaa, kun kirjoittaa logiikan kielelle mitä on tekemässä. Joskus taas liika
+symbolien käyttö sekoittaa. Selvien lauseiden kirjoittaminen kannattaa.
+19. Käänteinen suora todistus auttaa pääsemään negaatiosta eroon, jos väite on muotoa ¬ P.
+20. Kuvittele mielessäsi joku henkilö, jonka yrität saada vakuuttuneeksi väitteen
+todenperäisyydestä.
+21. Yrityksen ja erehdyksen kautta oppii. Harjoittelu lisää taitoja. Anna tilaa luovuudelle. Ole
+kärsivällinen. Taistele. Älä luovuta."
