@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import textfields
+from functions import format_text, new_text, tarkista_monivalinta
 
 class UI:
     def __init__(self, root):
@@ -8,38 +9,16 @@ class UI:
         self._root.geometry("800x600")
         self._root.configure(bg="white")
 
-    # ottaa tekstikentän ja muokkaa sen korkeuden vastaamaan tekstin pituutta
-    def format_text(self, textfield):
-        text = textfield.get("1.0", "end-1c")
-        lines = text.split('\n')
-        height = min(max(len(lines), 1), 15)
-        textfield.config(height=height, width=60, wrap="word", state=tk.DISABLED,)
-
-    def new_text(self, text):
-        textfield = tk.Text(
-        master=self._root,
-        font=("Arial", 12),
-        wrap="word",
-        bg="white",
-        relief="flat",
-        borderwidth=0,
-        highlightthickness=0
-        )
-        textfield.insert("1.0", text)
-        self.format_text(textfield)
-        textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
-
-    # näyttää näkymän
+    # käynnistää näkymän
     def start(self):
         label = ttk.Label(self._root, text="Todistus", font=("Arial", 16, "bold"))
         label.pack(pady=(20, 15))
 
-        # Tekstikenttien sisällöt
+        # tekstikenttien sisällöt
         textfields_list = [
             textfields.tehtavananto,
             textfields.alkuteksti,
-            textfields.vaite_muotoilu,
-            textfields.oletuskysymys
+            textfields.vaite_muotoilu
         ]
 
         # luodaan tekstikentät ja lisätään niihin tekstit
@@ -56,14 +35,16 @@ class UI:
             )
             texts.append(textfield)
             textfield.insert("1.0", text)
-            self.format_text(textfield)
+            format_text(textfield)
 
         [textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5)) for textfield in texts]
 
+        # tähän frameen kuuluu monivalintakysymys ja siihen kuuluva kenttä
         frame = tk.Frame(self._root)
         frame.config(relief="flat",borderwidth=0,highlightthickness=0)
         frame.pack()
 
+        # monivalintakysymys
         valinta = ttk.Combobox(
             frame,
             values=textfields.oletusvaihtoehdot,
@@ -76,39 +57,18 @@ class UI:
 
         tulos_label = tk.Label(frame, text="", font=("Arial", 12))
         tulos_label.pack(pady=10)
-
-        tehty = False
-
-        # Funktio tarkistukseen
-        def tarkista_vastaus():
-            nonlocal tehty
-            valittu = valinta.get()
-            if valittu == textfields.oletusvastaus:
-                tulos_label.config(text="Juuri näin!", fg="green")
-                if not tehty:
-                    tehty = True
-                    textfield = tk.Text(
-                    master=self._root,
-                    font=("Arial", 12),
-                    wrap="word",
-                    bg="white",
-                    relief="flat",
-                    borderwidth=0,
-                    highlightthickness=0
-                    )
-                    textfield.insert("1.0", valittu)
-                    self.format_text(textfield)
-                    textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
-
-            elif valittu=="a ja b ovat kokonaislukuja":
-                tulos_label.config(text="a ja b ovat kokonaislukuja, mutta tiedämmekö niistä vielä jotain muuta?", fg="blue")
-            else:
-                tulos_label.config(text="Onko tämä oletus vai väite?", fg="blue")
-
-        # Tarkistusnappi
-        tarkista_nappi = ttk.Button(frame, text="Tarkista", command=tarkista_vastaus)
+        
+        tarkista_nappi = ttk.Button(
+        frame,
+        text="Tarkista",
+        command=lambda: tarkista_monivalinta(self._root, valinta, textfields.oletusvastaus, tulos_label)
+        )
         tarkista_nappi.pack(pady=10)
 
-        button = ttk.Button(frame, text="Jatka", command=lambda: (frame.pack_forget()
-                                                                ,self.new_text(textfields.oletusjatko)))
+        def jatka():
+            frame.pack_forget()
+            new_text(self._root, textfields.oletusjatko)
+
+        button = ttk.Button(frame, text="Jatka", command=jatka)
+
         button.pack(pady=(5, 10))

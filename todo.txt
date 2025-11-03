@@ -1,3 +1,2 @@
 Ohjelmaa ei saa jatkaa ennen kuin oikea vastaus on saatu.
     -Jatka-nappi voisi ilmestyä vasta kun tarkistus menee läpi
-Teksti jää taas vähän peittoon
