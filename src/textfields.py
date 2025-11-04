@@ -12,6 +12,11 @@ oletusvaihtoehdot = [
 
 oletusvastaus = "a ja b ovat parittomia kokonaislukuja"
 
+oletukset = {"a ja b ovat parittomia kokonaislukuja":"Juuri näin!",
+              "a ja b ovat kokonaislukuja":"a ja b ovat kokonaislukuja, mutta tiedämmekö niistä vielä jotain muuta?",
+              "lukujen a ja b tulo on pariton luku":"Onko tämä oletus vai väite?"
+              }
+
 oletusjatko = "Voidaan merkitä lukuja kirjaimilla a ja b. Kokonaislukujen joukkoa merkitään kirjaimella \u2124, ja joukkoon kuulumista merkillä \u2208.\nVoimme siis merkitä: a, b \u2208 \u2124.\nMikä väite tällöin on?\n\nVäite:"
 
 vaitevaihtoehdot = [
@@ -19,6 +24,10 @@ vaitevaihtoehdot = [
     "a \u00B7 b on kokonaisluku",
     "lukujen a ja b tulo on pariton luku"
 ]
+
+vaitteet = {"a \u00B7 b on parillinen kokonaisluku":"Juuri näin!",
+    "a \u00B7 b on kokonaisluku":"a\u00B7 b on kokonaisluku, mutta mitä muuta haluamme todistaa?",
+    "lukujen a ja b tulo on pariton luku":"Juuri näin!"}
 
 vaitevastaus = ["a \u00B7 b on parillinen kokonaisluku", "lukujen a ja b tulo on pariton luku"]
 

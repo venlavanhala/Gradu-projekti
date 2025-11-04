@@ -1,13 +1,13 @@
 import tkinter as tk
 from tkinter import ttk
 import textfields
-from functions import *
+from activity import *
 from change_layout import *
 
 class UI:
     def __init__(self, root):
         self._root = root
-        self._root.geometry("800x600")
+        self._root.geometry("800x900")
         self._root.configure(bg="white")
         self.scrollable_frame = scrollable_screen(self._root)
 
@@ -27,7 +27,7 @@ class UI:
         texts = []
         for text in textfields_list:
             textfield = tk.Text(
-                master=self.scrollable_frame,   # ⬅️ HUOM! root → scrollable_frame
+                master=self.scrollable_frame,
                 font=("Arial", 12),
                 wrap="word",
                 bg="white",
@@ -41,9 +41,11 @@ class UI:
 
         [textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5)) for textfield in texts]
 
+        # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
         frame = tk.Frame(self.scrollable_frame, bg="white")
         frame.pack()
 
+        # monivalintakysymys
         valinta = ttk.Combobox(
             frame,
             values=textfields.oletusvaihtoehdot,
@@ -57,17 +59,18 @@ class UI:
         tulos_label = tk.Label(frame, text="", font=("Arial", 12), bg="white")
         tulos_label.pack(pady=10)
 
+        # tarkista-nappi, joka kutsuu tarkistusfunktiota
         tarkista_nappi = ttk.Button(
             frame,
             text="Tarkista",
-            command=lambda: tarkista_monivalinta(self.scrollable_frame, valinta, textfields.oletusvastaus, tulos_label)
+            command=lambda: check_combobox(self.scrollable_frame, valinta, textfields.oletusvastaus, tulos_label, textfields.oletukset)
         )
         tarkista_nappi.pack(pady=10)
 
-        # ===== 2. MONIVALINTA — piilotettu aluksi =====
+        # tehdään uusi frame väitemonivalinnalle
         vaiteframe = tk.Frame(self.scrollable_frame, bg="white")
-        # ei pack() tähän
 
+        # toinen monivalintakysymys
         vaiteboksi = ttk.Combobox(
             vaiteframe,
             values=textfields.vaitevaihtoehdot,
@@ -81,17 +84,17 @@ class UI:
         palauteteksti = tk.Label(vaiteframe, text="", font=("Arial", 12), bg="white")
         palauteteksti.pack(pady=10)
 
+        # tarkista-nappi, joka kutsuu tarkistusfunktiota
         tarkista_nappi2 = ttk.Button(
             vaiteframe,
             text="Tarkista",
-            command=lambda: tarkista_monivalinta(self.scrollable_frame, vaiteboksi, textfields.vaitevastaus, palauteteksti)
+            command=lambda: check_combobox(self.scrollable_frame, vaiteboksi, textfields.vaitevastaus, palauteteksti, textfields.vaitteet)
         )
         tarkista_nappi2.pack(pady=10)
 
-        def jatka():
-            frame.pack_forget()
-            new_text(self.scrollable_frame, textfields.oletusjatko)
-            vaiteframe.pack()
-
-        button = ttk.Button(frame, text="Jatka", command=jatka)
+        # Jatka-nappi piilottaa framen ja lisää uuden tekstin näytölle
+        button = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame,textfields.oletusjatko), vaiteframe.pack()))
         button.pack(pady=(5, 10))
+
+        button2 = ttk.Button(vaiteframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,vaiteframe,textfields.vaitejatko)))
+        button2.pack(pady=(5, 10))
