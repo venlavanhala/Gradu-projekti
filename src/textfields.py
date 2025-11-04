@@ -31,4 +31,14 @@ vaitteet = {"a \u00B7 b on parillinen kokonaisluku":"Juuri näin!",
 
 vaitevastaus = ["a \u00B7 b on parillinen kokonaisluku", "lukujen a ja b tulo on pariton luku"]
 
-vaitejatko = "Parilliset luvut voidaan ilmaista muodossa l=2k, koska parilliset luvut ovat aina jaollisia luvulla 2."
+vaitejatko = "Parilliset luvut voidaan ilmaista muodossa a=2k (k \u2208 \u2124), koska parilliset luvut ovat aina jaollisia luvulla 2. Miten parittomat luvut voitaisiin ilmaista tämän tyyppisesti?\nKirjoita tekstikenttään, miten pariton luku a voitaisiin ilmaista."
+
+pariton_oikeat = ["a=2k+1","a=2k-1"]
+
+pariton_vaihtoehdot = {"a=2k+1":"Hyvä!",
+    "a=2k-1":"Hyvä!"
+}
+
+pariton_vihje1 = "Jokaisen parillisen luvun jälkeen tulee pariton luku."
+
+pariton_vihje2 = "Parilliset luvut voidaan kirjoittaa muodossa a=2k. Jos lisäämme parilliseen lukuun luvun 1, siitä tulee pariton."

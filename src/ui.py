@@ -92,9 +92,26 @@ class UI:
         )
         tarkista_nappi2.pack(pady=10)
 
+        paritonframe = tk.Frame(self.scrollable_frame, bg="white")
+
+        pariton_kentta = tk.Entry(paritonframe, width=20)
+        pariton_kentta.pack(pady=10)
+
+        tuloskentta = tk.Label(paritonframe, text="", font=("Arial", 12), bg="white")
+        tuloskentta.pack(pady=10)
+
+        # tarkista-nappi, joka kutsuu tarkistusfunktiota
+        tarkista_nappi3 = ttk.Button(
+            paritonframe,
+            text="Tarkista",
+            command=lambda: check_entry(self.scrollable_frame, pariton_kentta, textfields.pariton_oikeat, tuloskentta, textfields.pariton_vaihtoehdot)
+        )
+        tarkista_nappi3.pack(pady=10)
+
         # Jatka-nappi piilottaa framen ja lisää uuden tekstin näytölle
         button = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame,textfields.oletusjatko), vaiteframe.pack()))
         button.pack(pady=(5, 10))
 
-        button2 = ttk.Button(vaiteframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,vaiteframe,textfields.vaitejatko)))
+        button2 = ttk.Button(vaiteframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,vaiteframe,textfields.vaitejatko), paritonframe.pack()))
         button2.pack(pady=(5, 10))
+

@@ -8,3 +8,5 @@ lisää scrollausmahdollisuus hiirellä?
     -toimiiko kaikissa käyttöjärjestelmissä?
 
 tekstikenttien luonti voitaisiin tehdä omaksi funktioksi
+
+vihjepainike ja tarkista-painike

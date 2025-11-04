@@ -1,8 +1,8 @@
 import tkinter as tk
 
-def scrollable_screen(juuri):
-    canvas = tk.Canvas(juuri, bg="white", highlightthickness=0)
-    scrollbar = tk.Scrollbar(juuri, orient="vertical", command=canvas.yview)
+def scrollable_screen(root):
+    canvas = tk.Canvas(root, bg="white", highlightthickness=0)
+    scrollbar = tk.Scrollbar(root, orient="vertical", command=canvas.yview)
     scrollable_frame = tk.Frame(canvas, bg="white")
 
     scrollable_frame.bind(
