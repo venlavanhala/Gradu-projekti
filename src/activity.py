@@ -1,5 +1,5 @@
 import tkinter as tk
-from edit_screen import *
+from change_layout import *
 
 
 def new_text(screeni, text):

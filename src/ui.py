@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import textfields
 from functions import *
-from edit_screen import *
+from change_layout import *
 
 class UI:
     def __init__(self, root):

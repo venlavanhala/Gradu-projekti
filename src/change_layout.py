@@ -5,7 +5,6 @@ def scrollable_screen(juuri):
     scrollbar = tk.Scrollbar(juuri, orient="vertical", command=canvas.yview)
     scrollable_frame = tk.Frame(canvas, bg="white")
 
-    # Kun scrollattavan framen koko muuttuu, päivitä canvasin scrollialue
     scrollable_frame.bind(
         "<Configure>",
         lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
