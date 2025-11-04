@@ -42,3 +42,5 @@ pariton_vaihtoehdot = {"a=2k+1":"Hyvä!",
 pariton_vihje1 = "Jokaisen parillisen luvun jälkeen tulee pariton luku."
 
 pariton_vihje2 = "Parilliset luvut voidaan kirjoittaa muodossa a=2k. Jos lisäämme parilliseen lukuun luvun 1, siitä tulee pariton."
+
+paritonjatko = "Nyt meillä on yksi muuttuja, joka ilmaisee paritonta lukua. Tarvitsemme vielä toisen parittoman luvun. Käytämme siihen eri muuttujia, koska parittomat luvut eivät välttämättä ole samoja.\nMääritellään b=2n+1, kun n \u2208 \u2124.\nVoimme nyt kirjoittaa tulon lukujen a ja b avulla."

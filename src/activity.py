@@ -58,3 +58,12 @@ def check_entry(screeni, entry, right_answer, label, feedback):
 def jatka(naytto, screen, teksti):
     screen.pack_forget()
     new_text(naytto, teksti)
+
+def popup_window(screen, text):
+    popup = tk.Toplevel(screen)
+    popup.title("Vihje")
+    popup.geometry("500x120")
+
+    tk.Label(popup, text=text).pack(pady=20)
+
+    tk.Button(popup, text="Sulje", command=popup.destroy).pack(pady=5)

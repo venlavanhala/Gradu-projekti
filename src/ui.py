@@ -108,6 +108,9 @@ class UI:
         )
         tarkista_nappi3.pack(pady=10)
 
+        pariton_button = ttk.Button(paritonframe, text="Vihje", command=lambda: popup_window(paritonframe, textfields.pariton_vihje1))
+        pariton_button.pack(pady=(5, 10))
+
         # Jatka-nappi piilottaa framen ja lisää uuden tekstin näytölle
         button = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame,textfields.oletusjatko), vaiteframe.pack()))
         button.pack(pady=(5, 10))
@@ -115,3 +118,5 @@ class UI:
         button2 = ttk.Button(vaiteframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,vaiteframe,textfields.vaitejatko), paritonframe.pack()))
         button2.pack(pady=(5, 10))
 
+        button3 = ttk.Button(paritonframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,paritonframe,textfields.paritonjatko)))
+        button3.pack(pady=(5, 10))
