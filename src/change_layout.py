@@ -1,5 +1,6 @@
 import tkinter as tk
 
+# tekee näytöstä scrollattavan
 def scrollable_screen(root):
     canvas = tk.Canvas(root, bg="white", highlightthickness=0)
     scrollbar = tk.Scrollbar(root, orient="vertical", command=canvas.yview)
@@ -18,6 +19,7 @@ def scrollable_screen(root):
 
     return scrollable_frame
 
+# muotoilee tekstikentän
 def format_text(textfield):
     text = textfield.get("1.0", "end-1c")
     lines = text.split('\n')
