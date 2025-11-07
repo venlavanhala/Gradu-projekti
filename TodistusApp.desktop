@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=TodistusApp
+Comment=Käynnistä TodistusApp
+Exec=/home/venla/koodia/graduprojekti/src/dist/index
+Icon=/home/venla/koodia/graduprojekti/logo.png
+Path=/home/venla/koodia/graduprojekti/src
+Terminal=false
+Categories=Utility;

@@ -1,9 +1,13 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+Tässä sovelluksessa voit harjoitella todistamistekniikkaa!
 
-=======
-# Gradu-projekti
->>>>>>> origin/main
-=======
+Asennus-ohjeet:
 
->>>>>>> 132b0ac5513ab4e4adf5bb8575cec72851f671d4
+Avaa terminaali komennolla Ctrl + Alt + T.
+
+Liitä seuraavat komennot terminaaliin: 
+
+git clone https://github.com/kayttaja/graduprojekti.git
+cd graduprojekti
+bash setup.sh
+
+Tämän jälkeen sinulla pitäisi olla ohjelman kuvake työpöydällä, ja tätä klikkaamalla ohjelma käynnistyy.
