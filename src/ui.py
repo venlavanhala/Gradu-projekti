@@ -63,7 +63,7 @@ class UI:
         tarkista_nappi = ttk.Button(
             frame,
             text="Tarkista",
-            command=lambda: check_combobox(self.scrollable_frame, valinta, textfields.oletusvastaus, tulos_label, textfields.oletukset)
+            command=lambda: check_combobox(self.scrollable_frame, valinta, textfields.oletusvastaus, tulos_label, textfields.oletukset, button)
         )
         tarkista_nappi.pack(pady=10)
 
@@ -88,7 +88,7 @@ class UI:
         tarkista_nappi2 = ttk.Button(
             vaiteframe,
             text="Tarkista",
-            command=lambda: check_combobox(self.scrollable_frame, vaiteboksi, textfields.vaitevastaus, palauteteksti, textfields.vaitteet)
+            command=lambda: check_combobox(self.scrollable_frame, vaiteboksi, textfields.vaitevastaus, palauteteksti, textfields.vaitteet, button2)
         )
         tarkista_nappi2.pack(pady=10)
 
@@ -104,7 +104,7 @@ class UI:
         tarkista_nappi3 = ttk.Button(
             paritonframe,
             text="Tarkista",
-            command=lambda: check_entry(self.scrollable_frame, pariton_kentta, textfields.pariton_oikeat, tuloskentta, textfields.pariton_vaihtoehdot)
+            command=lambda: check_entry(self.scrollable_frame, pariton_kentta, textfields.pariton_oikeat, tuloskentta, textfields.pariton_vaihtoehdot, button3)
         )
         tarkista_nappi3.pack(pady=10)
 
@@ -113,10 +113,7 @@ class UI:
 
         # Jatka-nappi piilottaa framen ja lisää uuden tekstin näytölle
         button = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame,textfields.oletusjatko), vaiteframe.pack()))
-        button.pack(pady=(5, 10))
 
         button2 = ttk.Button(vaiteframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,vaiteframe,textfields.vaitejatko), paritonframe.pack()))
-        button2.pack(pady=(5, 10))
 
         button3 = ttk.Button(paritonframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,paritonframe,textfields.paritonjatko)))
-        button3.pack(pady=(5, 10))
