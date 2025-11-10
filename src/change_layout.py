@@ -25,7 +25,6 @@ def format_text(textfield):
     lines = text.split('\n')
     lines = [len(line) for line in lines]
     height = text.count("\n\n")+max(lines)/60+len(lines) # tyhjät rivit + rivit + pisin rivi/leveys
-    print(lines)
     textfield.config(height=height, width=60, wrap="word", state=tk.DISABLED,font=("Georgia", 12))
 
 # korkeus = \n määrä + pisin/12

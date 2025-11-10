@@ -1,5 +1,5 @@
 muutokset menee väärään etäbranchiin
 
-välit tekstien väleillä on oudot
-
 tekstin koon muuttamiseen napit?
+
+windows & mac toimivuudet
