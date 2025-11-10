@@ -1,3 +1,7 @@
 muutokset menee väärään etäbranchiin
 
 windows & mac toimivuudet
+
+halutaanko hyödyntää poetryä ohjelman suorituksessa?
+
+tee loput todistuksesta

@@ -33,7 +33,7 @@ vaitteet = {"a \u00B7 b on parillinen kokonaisluku":"Juuri näin!",
 
 vaitevastaus = ["a \u00B7 b on parillinen kokonaisluku", "lukujen a ja b tulo on pariton luku"]
 
-vaitejatko = "Parilliset luvut voidaan ilmaista muodossa a=2k (k \u2208 \u2124), koska parilliset luvut ovat aina jaollisia luvulla 2. Miten parittomat luvut voitaisiin ilmaista tämän tyyppisesti?\nKirjoita tekstikenttään, miten pariton luku a voitaisiin ilmaista."
+vaitejatko = "Parilliset luvut voidaan ilmaista muodossa a=2k (k \u2208 \u2124), koska parilliset luvut ovat aina jaollisia luvulla 2. Miten parittomat luvut voitaisiin ilmaista tämän tyyppisesti kokonaisluvun k avulla?\nKirjoita tekstikenttään, miten pariton luku a voitaisiin ilmaista. Kirjoita vastaus muodossa a=[lauseke]."
 
 pariton_oikeat = ["a=2k+1","a=2k-1"]
 
@@ -45,4 +45,4 @@ pariton_vihje1 = "Jokaisen parillisen luvun jälkeen tulee pariton luku."
 
 pariton_vihje2 = "Parilliset luvut voidaan kirjoittaa muodossa a=2k. Jos lisäämme parilliseen lukuun luvun 1, siitä tulee pariton."
 
-paritonjatko = "Nyt meillä on yksi muuttuja, joka ilmaisee paritonta lukua. Tarvitsemme vielä toisen parittoman luvun. Käytämme siihen eri muuttujia, koska parittomat luvut eivät välttämättä ole samoja.\nMääritellään b=2n+1, kun n \u2208 \u2124.\nVoimme nyt kirjoittaa tulon lukujen a ja b avulla."
+paritonjatko = "Nyt meillä on yksi muuttuja, joka ilmaisee paritonta lukua. Tarvitsemme vielä toisen parittoman luvun. Käytämme siihen eri muuttujia, koska parittomat luvut eivät välttämättä ole samoja.\nMääritellään b=2n+1, kun n \u2208 \u2124.\nVoimme nyt kirjoittaa tulon lukujen a ja b avulla.\n\na \u00B7 b = (2k+1)(2n+1)"
