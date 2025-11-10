@@ -18,7 +18,7 @@ def new_text(screeni, text):
     textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
 
 # tarkista monivalinta
-def check_combobox(screeni, choice, right_answer, label, feedback, button):
+def check_combobox(screeni, choice, right_answer, label, feedback, button, checkbutton):
     answer = choice.get()
     if answer == right_answer or answer in right_answer:
         label.config(text=feedback[answer], fg="green", font=("Arial", 12))
@@ -34,11 +34,12 @@ def check_combobox(screeni, choice, right_answer, label, feedback, button):
         textfield.insert("1.0", answer)
         format_text(textfield)
         textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
+        checkbutton.pack_forget()
         button.pack()
     else:
         label.config(text=feedback[answer], fg="blue")
 
-def check_entry(screeni, entry, right_answer, label, feedback, button):
+def check_entry(screeni, entry, right_answer, label, feedback, button, checkbutton):
     answer = entry.get().replace(" ","").lower()
     if answer == right_answer or answer in right_answer:
         label.config(text=feedback[answer], fg="green", font=("Arial", 12))
@@ -54,6 +55,7 @@ def check_entry(screeni, entry, right_answer, label, feedback, button):
         textfield.insert("1.0", answer)
         format_text(textfield)
         textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
+        checkbutton.pack_forget()
         button.pack()
 
     else:

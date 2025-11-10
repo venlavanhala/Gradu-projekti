@@ -1,3 +1,5 @@
+johdanto = "Tässä harjoituksessa tutustutaan erään lukuteorisen lauseen todistamiseen. Saat scrollattua näkymää näytön oikeasta reunasta."
+
 tehtavananto = "Todista: Kahden parittoman luvun a ja b tulo on pariton luku."
 
 alkuteksti = "Ensin täytyy löytää oletus ja väite, jota ollaan ratkaisemassa.Oletus on jokin tieto, josta lähdetään liikkeelle ja jota voimme pitää tunnettuna. Väite on jokin asia, jonka haluamme todistaa.\nLause 'Kahden parittoman kokonaisluvun tulo on pariton kokonaisluku' voitaisiin myös ilmaista muodossa:"

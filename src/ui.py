@@ -18,6 +18,7 @@ class UI:
 
         # tekstikenttien sisällöt
         textfields_list = [
+            textfields.johdanto,
             textfields.tehtavananto,
             textfields.alkuteksti,
             textfields.vaite_muotoilu
@@ -49,7 +50,7 @@ class UI:
         tarkista_nappi = ttk.Button(
             frame,
             text="Tarkista",
-            command=lambda: check_combobox(self.scrollable_frame, valinta, textfields.oletusvastaus, tulos_label, textfields.oletukset, button)
+            command=lambda: check_combobox(self.scrollable_frame, valinta, textfields.oletusvastaus, tulos_label, textfields.oletukset, button, tarkista_nappi)
         )
         tarkista_nappi.pack(pady=10)
 
@@ -74,7 +75,7 @@ class UI:
         tarkista_nappi2 = ttk.Button(
             vaiteframe,
             text="Tarkista",
-            command=lambda: check_combobox(self.scrollable_frame, vaiteboksi, textfields.vaitevastaus, palauteteksti, textfields.vaitteet, button2)
+            command=lambda: check_combobox(self.scrollable_frame, vaiteboksi, textfields.vaitevastaus, palauteteksti, textfields.vaitteet, button2, tarkista_nappi2)
         )
         tarkista_nappi2.pack(pady=10)
 
@@ -90,7 +91,7 @@ class UI:
         tarkista_nappi3 = ttk.Button(
             paritonframe,
             text="Tarkista",
-            command=lambda: check_entry(self.scrollable_frame, pariton_kentta, textfields.pariton_oikeat, tuloskentta, textfields.pariton_vaihtoehdot, button3)
+            command=lambda: check_entry(self.scrollable_frame, pariton_kentta, textfields.pariton_oikeat, tuloskentta, textfields.pariton_vaihtoehdot, button3, tarkista_nappi3)
         )
         tarkista_nappi3.pack(pady=10)
 
