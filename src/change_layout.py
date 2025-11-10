@@ -33,7 +33,6 @@ def format_text(textfield):
 def format_textfield(screen, text):
     textfield = tk.Text(
         master=screen,
-        font=("Georgia", 12),
         wrap="word",
         bg="white",
         relief="flat",

@@ -1,5 +1,3 @@
 muutokset menee väärään etäbranchiin
 
-tekstin koon muuttamiseen napit?
-
 windows & mac toimivuudet
