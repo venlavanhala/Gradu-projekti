@@ -1,4 +1,4 @@
-johdanto = "Tässä harjoituksessa tutustutaan erään lukuteorisen lauseen todistamiseen. Saat scrollattua näkymää näytön oikeasta reunasta."
+johdanto = "Tässä harjoituksessa tutustutaan erään lukuteorian lauseen todistamiseen. Saat scrollattua näkymää näytön oikeasta reunasta."
 
 tehtavananto = "Todista: Kahden parittoman luvun a ja b tulo on pariton luku."
 

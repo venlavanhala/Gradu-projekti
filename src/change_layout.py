@@ -19,13 +19,18 @@ def scrollable_screen(root):
 
     return scrollable_frame
 
-# muotoilee tekstikentän
+# muotoilee tekstikentän muodon
 def format_text(textfield):
     text = textfield.get("1.0", "end-1c")
     lines = text.split('\n')
-    height = min(max(len(lines), 1), 15)
-    textfield.config(height=height+3, width=60, wrap="word", state=tk.DISABLED,font=("Georgia", 12))
+    lines = [len(line) for line in lines]
+    height = text.count("\n\n")+max(lines)/60+len(lines) # tyhjät rivit + rivit + pisin rivi/leveys
+    print(lines)
+    textfield.config(height=height, width=60, wrap="word", state=tk.DISABLED,font=("Georgia", 12))
 
+# korkeus = \n määrä + pisin/12
+
+# muotoilee tekstikentän ja lisää tekstin
 def format_textfield(screen, text):
     textfield = tk.Text(
         master=screen,
