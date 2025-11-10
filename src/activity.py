@@ -21,7 +21,7 @@ def new_text(screeni, text):
 def check_combobox(screeni, choice, right_answer, label, feedback, button):
     answer = choice.get()
     if answer == right_answer or answer in right_answer:
-        label.config(text=feedback[answer], fg="green")
+        label.config(text=feedback[answer], fg="green", font=("Arial", 12))
         textfield = tk.Text(
         master=screeni,
         font=("Arial", 12),
@@ -41,7 +41,7 @@ def check_combobox(screeni, choice, right_answer, label, feedback, button):
 def check_entry(screeni, entry, right_answer, label, feedback, button):
     answer = entry.get().replace(" ","").lower()
     if answer == right_answer or answer in right_answer:
-        label.config(text=feedback[answer], fg="green")
+        label.config(text=feedback[answer], fg="green", font=("Arial", 12))
         textfield = tk.Text(
         master=screeni,
         font=("Arial", 12),

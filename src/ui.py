@@ -13,7 +13,7 @@ class UI:
 
     # käynnistää näkymän
     def start(self):
-        label = ttk.Label(self.scrollable_frame, text="Harjoittele todistamista", font=("Arial", 16, "bold"))
+        label = ttk.Label(self.scrollable_frame, text="Harjoittele todistamista", font=("Georgia", 16, "bold"))
         label.pack(pady=(20, 15))
 
         # tekstikenttien sisällöt
@@ -24,22 +24,8 @@ class UI:
         ]
 
         # luodaan tekstikentät ja lisätään niihin tekstit
-        texts = []
         for text in textfields_list:
-            textfield = tk.Text(
-                master=self.scrollable_frame,
-                font=("Arial", 12),
-                wrap="word",
-                bg="white",
-                relief="flat",
-                borderwidth=0,
-                highlightthickness=0
-            )
-            texts.append(textfield)
-            textfield.insert("1.0", text)
-            format_text(textfield)
-
-        [textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5)) for textfield in texts]
+            format_textfield(self.scrollable_frame, text)
 
         # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
         frame = tk.Frame(self.scrollable_frame, bg="white")
@@ -51,12 +37,12 @@ class UI:
             values=textfields.oletusvaihtoehdot,
             width=50,
             state="readonly",
-            font=("Arial", 11)
+            font=("Georgia", 11)
         )
         valinta.current(1)
         valinta.pack(pady=(5, 10))
 
-        tulos_label = tk.Label(frame, text="", font=("Arial", 12), bg="white")
+        tulos_label = tk.Label(frame, text="", font=("Georgia", 12), bg="white")
         tulos_label.pack(pady=10)
 
         # tarkista-nappi, joka kutsuu tarkistusfunktiota
@@ -76,12 +62,12 @@ class UI:
             values=textfields.vaitevaihtoehdot,
             width=50,
             state="readonly",
-            font=("Arial", 11)
+            font=("Georgia", 11)
         )
         vaiteboksi.current(1)
         vaiteboksi.pack(pady=(5, 10))
 
-        palauteteksti = tk.Label(vaiteframe, text="", font=("Arial", 12), bg="white")
+        palauteteksti = tk.Label(vaiteframe, text="", font=("Georgia", 12), bg="white")
         palauteteksti.pack(pady=10)
 
         # tarkista-nappi, joka kutsuu tarkistusfunktiota
@@ -97,7 +83,7 @@ class UI:
         pariton_kentta = tk.Entry(paritonframe, width=20)
         pariton_kentta.pack(pady=10)
 
-        tuloskentta = tk.Label(paritonframe, text="", font=("Arial", 12), bg="white")
+        tuloskentta = tk.Label(paritonframe, text="", font=("Georgia", 12), bg="white")
         tuloskentta.pack(pady=10)
 
         # tarkista-nappi, joka kutsuu tarkistusfunktiota

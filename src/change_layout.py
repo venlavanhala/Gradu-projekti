@@ -24,4 +24,19 @@ def format_text(textfield):
     text = textfield.get("1.0", "end-1c")
     lines = text.split('\n')
     height = min(max(len(lines), 1), 15)
-    textfield.config(height=height+3, width=60, wrap="word", state=tk.DISABLED,)
+    textfield.config(height=height+3, width=60, wrap="word", state=tk.DISABLED,font=("Georgia", 12))
+
+def format_textfield(screen, text):
+    textfield = tk.Text(
+        master=screen,
+        font=("Georgia", 12),
+        wrap="word",
+        bg="white",
+        relief="flat",
+        borderwidth=0,
+        highlightthickness=0
+    )
+    textfield.insert("1.0", text)
+    format_text(textfield)
+    textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5))
+
