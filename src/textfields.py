@@ -1,4 +1,4 @@
-johdanto = "Tässä harjoituksessa tutustutaan erään lukuteorian lauseen todistamiseen. Saat scrollattua näkymää näytön oikeasta reunasta."
+johdanto = "Tässä harjoituksessa tutustutaan erään lukuteorian lauseen todistamiseen. Saat scrollattua näkymää näytön oikeasta reunasta. Mieti kysymyksiä ensin itse ja katso vasta sitten mahdolliset vastausvaihtoehdot!"
 
 tehtavananto = "Todista: Kahden parittoman luvun a ja b tulo on pariton luku."
 
@@ -45,4 +45,22 @@ pariton_vihje1 = "Jokaisen parillisen luvun jälkeen tulee pariton luku."
 
 pariton_vihje2 = "Parilliset luvut voidaan kirjoittaa muodossa a=2k. Jos lisäämme parilliseen lukuun luvun 1, siitä tulee pariton."
 
-paritonjatko = "Nyt meillä on yksi muuttuja, joka ilmaisee paritonta lukua. Tarvitsemme vielä toisen parittoman luvun. Käytämme siihen eri muuttujia, koska parittomat luvut eivät välttämättä ole samoja.\nMääritellään b=2n+1, kun n \u2208 \u2124.\nVoimme nyt kirjoittaa tulon lukujen a ja b avulla.\n\na \u00B7 b = (2k+1)(2n+1)"
+paritonjatko = "Nyt meillä on yksi muuttuja, joka ilmaisee paritonta lukua. Tarvitsemme vielä toisen parittoman luvun. Käytämme siihen eri muuttujia, koska parittomat luvut eivät välttämättä ole samoja. "
+paritonjatko+="Määritellään b=2n+1, kun n \u2208 \u2124.\nVoimme nyt kirjoittaa tulon lukujen a ja b avulla.\n\na \u00B7 b = (2k+1)(2n+1)\n"
+paritonjatko+="Lasketaan kertolasku auki:\n\na \u00B7 b = 4kn+4kn+1=8kn+1"
+
+muotoilukysymys = "Haluamme osoittaa, että lukujen a ja b tulo 8kn+1 on pariton luku. Millä tavalla seuraavista voimme todistaa tämän?"
+
+osoitusvaihtoehdot = [
+    "Osoitetaan, että 8kn+1 ei ole jaollinen kahdella",
+    "Osoitetaan, että a \u00B7 b voidaan kirjoittaa muodossa 2p+1, jossa p \u2208 \u2124",
+    "Osoitamme, että 8kn+1 on jollain muulla luvulla kuin 2"
+]
+
+osoitusvastaus = ["Osoitetaan, että 8kn+1 ei ole jaollinen kahdella", "Osoitetaan, että a \u00B7 b voidaan kirjoittaa muodossa 2p+1, jossa p \u2208 \u2124"]
+
+osoituspalautteet = {"Osoitamme, että 8kn+1 on jollain muulla luvulla kuin 2":"Tämä ei osoita sitä, että 8kn+1 olisi pariton luku. Jos 8kn+1 olisi jaollinen esimerkiksi luvulla 5, se voisi olla samalla myös jaollinen luvulla 2.",
+                     "Osoitetaan, että 8kn+1 ei ole jaollinen kahdella":"Oikein!",
+                     "Osoitetaan, että a \u00B7 b voidaan kirjoittaa muodossa 2p+1, jossa p \u2208 \u2124":"Kyllä!"}
+
+osoitusjatko = "Kirjoitetaan seuraavaksi 8kn+1 muodossa 2p+1, jotta voimme päätellä, onko se pariton luku.\n\nKirjoita 8kn+1 muodossa 2 \u00B7 p+1, kun p \u2208 \u2124"

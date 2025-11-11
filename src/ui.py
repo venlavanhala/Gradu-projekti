@@ -98,9 +98,58 @@ class UI:
         pariton_button = ttk.Button(paritonframe, text="Vihje", command=lambda: popup_window(paritonframe, textfields.pariton_vihje1))
         pariton_button.pack(pady=(5, 10))
 
+        osoitusframe = tk.Frame(self.scrollable_frame, bg="white")
+
+        osoitusboksi = ttk.Combobox(
+        osoitusframe,
+        values=textfields.osoitusvaihtoehdot,
+        width=60,
+        state="readonly",
+        font=("Georgia", 11)
+    )
+        osoitusboksi.current(1)
+        osoitusboksi.pack(pady=(5, 10))
+
+        palauteosoitus = tk.Label(vaiteframe, text="", font=("Georgia", 12), bg="white")
+        palauteosoitus.pack(pady=10)
+
+        # tarkista-nappi, joka kutsuu tarkistusfunktiota
+        tarkista_nappi4 = ttk.Button(
+            osoitusframe,
+            text="Tarkista", #muuta väitteet osoituksiksi uuteen
+            command=lambda: check_combobox(self.scrollable_frame, osoitusboksi, textfields.osoitusvastaus, palauteosoitus, textfields.osoituspalautteet, button4, tarkista_nappi4)
+        )
+        tarkista_nappi4.pack(pady=10)
+
+
+
+        muotoiluframe = tk.Frame(self.scrollable_frame, bg="white")
+
+        muotoilu_kentta = tk.Entry(muotoiluframe, width=20)
+        muotoilu_kentta.pack(pady=10)
+
+        muotoilu_palaute = tk.Label(muotoiluframe, text="", font=("Georgia", 12), bg="white")
+        muotoilu_palaute.pack(pady=10)
+
+        # tarkista-nappi, joka kutsuu tarkistusfunktiota
+        tarkista_nappi5 = ttk.Button(
+            muotoiluframe,
+            text="Tarkista", # muokkaa nämä
+            command=lambda: check_entry(self.scrollable_frame, muotoilu_kentta, textfields.pariton_oikeat, tuloskentta, textfields.pariton_vaihtoehdot, button3, tarkista_nappi3)
+        )
+        tarkista_nappi3.pack(pady=10)
+
+        pariton_button = ttk.Button(paritonframe, text="Vihje", command=lambda: popup_window(paritonframe, textfields.pariton_vihje1))
+        pariton_button.pack(pady=(5, 10))
+
+
+
+
         # Jatka-nappi piilottaa framen ja lisää uuden tekstin näytölle
         button = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame,textfields.oletusjatko), vaiteframe.pack()))
 
         button2 = ttk.Button(vaiteframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,vaiteframe,textfields.vaitejatko), paritonframe.pack()))
 
-        button3 = ttk.Button(paritonframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,paritonframe,textfields.paritonjatko)))
+        button3 = ttk.Button(paritonframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,paritonframe,textfields.paritonjatko), osoitusframe.pack()))
+
+        button4 = ttk.Button(osoitusframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,osoitusframe,textfields.osoitusjatko)))
