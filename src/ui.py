@@ -7,7 +7,7 @@ from change_layout import *
 class UI:
     def __init__(self, root):
         self._root = root
-        self._root.geometry("800x900")
+        self._root.geometry("800x900") #näytön koko
         self._root.configure(bg="white")
         self.scrollable_frame = scrollable_screen(self._root)
 
@@ -16,7 +16,7 @@ class UI:
         label = ttk.Label(self.scrollable_frame, text="Harjoittele todistamista", font=("Georgia", 16, "bold"))
         label.pack(pady=(20, 15))
 
-        # tekstikenttien sisällöt
+        # ensimmäisten tekstikenttien sisällöt
         textfields_list = [
             textfields.johdanto,
             textfields.tehtavananto,
@@ -95,8 +95,10 @@ class UI:
         )
         tarkista_nappi3.pack(pady=10)
 
-        pariton_button = ttk.Button(paritonframe, text="Vihje", command=lambda: popup_window(paritonframe, textfields.pariton_vihje1))
+        pariton_button = ttk.Button(paritonframe, text="Vihje", command=lambda: (popup_window(paritonframe, textfields.pariton_vihje1), pariton_button2.pack(pady=(5, 10))))
         pariton_button.pack(pady=(5, 10))
+
+        pariton_button2 = ttk.Button(paritonframe, text="Vihje 2", command=lambda: popup_window(paritonframe, textfields.pariton_vihje2))
 
         osoitusframe = tk.Frame(self.scrollable_frame, bg="white")
 
@@ -110,7 +112,7 @@ class UI:
         osoitusboksi.current(1)
         osoitusboksi.pack(pady=(5, 10))
 
-        palauteosoitus = tk.Label(vaiteframe, text="", font=("Georgia", 12), bg="white")
+        palauteosoitus = tk.Label(osoitusframe, text="", font=("Georgia", 12), bg="white")
         palauteosoitus.pack(pady=10)
 
         # tarkista-nappi, joka kutsuu tarkistusfunktiota
@@ -120,8 +122,6 @@ class UI:
             command=lambda: check_combobox(self.scrollable_frame, osoitusboksi, textfields.osoitusvastaus, palauteosoitus, textfields.osoituspalautteet, button4, tarkista_nappi4)
         )
         tarkista_nappi4.pack(pady=10)
-
-
 
         muotoiluframe = tk.Frame(self.scrollable_frame, bg="white")
 
@@ -135,12 +135,12 @@ class UI:
         tarkista_nappi5 = ttk.Button(
             muotoiluframe,
             text="Tarkista", # muokkaa nämä
-            command=lambda: check_entry(self.scrollable_frame, muotoilu_kentta, textfields.pariton_oikeat, tuloskentta, textfields.pariton_vaihtoehdot, button3, tarkista_nappi3)
+            command=lambda: check_entry(self.scrollable_frame, muotoilu_kentta, textfields.pariton_oikeat, muotoilu_palaute, textfields.pariton_vaihtoehdot, button4, tarkista_nappi5)
         )
-        tarkista_nappi3.pack(pady=10)
+        tarkista_nappi5.pack(pady=10)
 
-        pariton_button = ttk.Button(paritonframe, text="Vihje", command=lambda: popup_window(paritonframe, textfields.pariton_vihje1))
-        pariton_button.pack(pady=(5, 10))
+        jaollinen_button = ttk.Button(muotoiluframe, text="Vihje", command=lambda: popup_window(muotoiluframe, textfields.pariton_vihje1))
+        jaollinen_button.pack(pady=(5, 10))
 
 
 
@@ -152,4 +152,4 @@ class UI:
 
         button3 = ttk.Button(paritonframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,paritonframe,textfields.paritonjatko), osoitusframe.pack()))
 
-        button4 = ttk.Button(osoitusframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,osoitusframe,textfields.osoitusjatko)))
+        button4 = ttk.Button(osoitusframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,osoitusframe,textfields.osoitusjatko), muotoiluframe.pack()))

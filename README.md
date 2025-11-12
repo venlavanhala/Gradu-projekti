@@ -6,9 +6,9 @@ Avaa terminaali komennolla Ctrl + Alt + T.
 
 Liitä seuraavat komennot terminaaliin: 
 
-git clone https://github.com/kayttaja/graduprojekti.git
+git clone https://github.com/venlavanhala/Gradu-projekti.git
 
-cd graduprojekti
+cd Gradu-projekti
 
 bash setup.sh
 
