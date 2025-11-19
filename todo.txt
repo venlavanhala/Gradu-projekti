@@ -1,5 +1,3 @@
-muutokset menee väärään etäbranchiin
-
 tee loput todistuksesta
 
 muuttujien yms nimeäminen paremmaksi ja englanniksi
@@ -8,12 +6,8 @@ käytä nappeja uudelleen, jotta ei tarvitse tehdä aina uutta
 
 mieti toimintoja uudelleen
 
+
+
 windows & mac toimivuudet
 
-halutaanko hyödyntää poetryä ohjelman suorituksessa? nyt se ei ehkä ole mukana
-
-pitää asentaa pyinstaller ennen setuppia?
-
-voi olla, että asennettu omalle koneelle mutta ei virtuaaliympäristössä
-
-ei pycachea gittiin
+nyt poetry buildataan ja tekee whl-tiedoston
