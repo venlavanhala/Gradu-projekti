@@ -101,7 +101,7 @@ class UI:
         width=60,
         state="readonly",
         font=("Georgia", 11)
-    )
+        )
         choose_evidence.current(1)
         choose_evidence.pack(pady=(5, 10))
 
