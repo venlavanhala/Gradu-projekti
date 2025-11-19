@@ -7,9 +7,10 @@ mieti toimintoja uudelleen
     - voiko tehdä yksinkertaisemmin tai paremmin?
 
 tietoboksit voisivat olla eri näköisiä kuin todistusosio
+    - edes eri väriset tekstit
+    - onnistuu nyt laittamalla väri
 
-lisää tekstit vasta kun framet on tehty?
-    - muuten vaikeaa pysyä perässä, mitä tekstejä missäkin
+esim. koko screeni, voisiko antaa default parametriksi?
 
 windows & mac toimivuudet
 
