@@ -43,3 +43,7 @@ def format_textfield(screen, text):
     format_text(textfield)
     textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5))
 
+# vaihda labelin vanha frame uuteen
+def move_label(label, frame):
+    label.pack_forget()
+    label.pack(in_=frame, pady=20)
