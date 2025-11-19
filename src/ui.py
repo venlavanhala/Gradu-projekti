@@ -33,123 +33,123 @@ class UI:
         frame.pack()
 
         # monivalintakysymys
-        valinta = ttk.Combobox(
+        choose_assumption = ttk.Combobox(
             frame,
             values=textfields.oletusvaihtoehdot,
             width=50,
             state="readonly",
             font=("Georgia", 11)
         )
-        valinta.current(1)
-        valinta.pack(pady=(5, 10))
+        choose_assumption.current(1)
+        choose_assumption.pack(pady=(5, 10))
 
-        tulos_label = tk.Label(frame, text="", font=("Georgia", 12), bg="white")
-        tulos_label.pack(pady=10)
+        feedback_label_assumption = tk.Label(frame, text="", font=("Georgia", 12), bg="white")
+        feedback_label_assumption.pack(pady=10)
 
         # tarkista-nappi, joka kutsuu tarkistusfunktiota
-        tarkista_nappi = ttk.Button(
+        check_assumption_answer = ttk.Button(
             frame,
             text="Tarkista",
-            command=lambda: check_combobox(self.scrollable_frame, valinta, textfields.oletusvastaus, tulos_label, textfields.oletukset, button, tarkista_nappi)
+            command=lambda: check_combobox(self.scrollable_frame, choose_assumption, textfields.oletusvastaus, feedback_label_assumption, textfields.oletukset, continue_button1, check_assumption_answer)
         )
-        tarkista_nappi.pack(pady=10)
+        check_assumption_answer.pack(pady=10)
 
         # tehdään uusi frame väitemonivalinnalle
-        vaiteframe = tk.Frame(self.scrollable_frame, bg="white")
+        statement_frame = tk.Frame(self.scrollable_frame, bg="white")
 
         # toinen monivalintakysymys
-        vaiteboksi = ttk.Combobox(
-            vaiteframe,
+        choose_statement = ttk.Combobox(
+            statement_frame,
             values=textfields.vaitevaihtoehdot,
             width=50,
             state="readonly",
             font=("Georgia", 11)
         )
-        vaiteboksi.current(1)
-        vaiteboksi.pack(pady=(5, 10))
+        choose_statement.current(1)
+        choose_statement.pack(pady=(5, 10))
 
-        palauteteksti = tk.Label(vaiteframe, text="", font=("Georgia", 12), bg="white")
-        palauteteksti.pack(pady=10)
-
-        # tarkista-nappi, joka kutsuu tarkistusfunktiota
-        tarkista_nappi2 = ttk.Button(
-            vaiteframe,
-            text="Tarkista",
-            command=lambda: check_combobox(self.scrollable_frame, vaiteboksi, textfields.vaitevastaus, palauteteksti, textfields.vaitteet, button2, tarkista_nappi2)
-        )
-        tarkista_nappi2.pack(pady=10)
-
-        paritonframe = tk.Frame(self.scrollable_frame, bg="white")
-
-        pariton_kentta = tk.Entry(paritonframe, width=20)
-        pariton_kentta.pack(pady=10)
-
-        tuloskentta = tk.Label(paritonframe, text="", font=("Georgia", 12), bg="white")
-        tuloskentta.pack(pady=10)
+        feedback_label_statement = tk.Label(statement_frame, text="", font=("Georgia", 12), bg="white")
+        feedback_label_statement.pack(pady=10)
 
         # tarkista-nappi, joka kutsuu tarkistusfunktiota
-        tarkista_nappi3 = ttk.Button(
-            paritonframe,
+        check_statement_answer = ttk.Button(
+            statement_frame,
             text="Tarkista",
-            command=lambda: check_entry(self.scrollable_frame, pariton_kentta, textfields.pariton_oikeat, tuloskentta, textfields.pariton_vaihtoehdot, button3, tarkista_nappi3)
+            command=lambda: check_combobox(self.scrollable_frame, choose_statement, textfields.vaitevastaus, feedback_label_statement, textfields.vaitteet, continue_button2, check_statement_answer)
         )
-        tarkista_nappi3.pack(pady=10)
+        check_statement_answer.pack(pady=10)
 
-        pariton_button = ttk.Button(paritonframe, text="Vihje", command=lambda: (popup_window(paritonframe, textfields.pariton_vihje1), pariton_button2.pack(pady=(5, 10))))
-        pariton_button.pack(pady=(5, 10))
+        pairless_frame = tk.Frame(self.scrollable_frame, bg="white")
 
-        pariton_button2 = ttk.Button(paritonframe, text="Vihje 2", command=lambda: popup_window(paritonframe, textfields.pariton_vihje2))
+        pairless_field = tk.Entry(pairless_frame, width=20)
+        pairless_field.pack(pady=10)
 
-        osoitusframe = tk.Frame(self.scrollable_frame, bg="white")
+        feedback_label_pairless = tk.Label(pairless_frame, text="", font=("Georgia", 12), bg="white")
+        feedback_label_pairless.pack(pady=10)
 
-        osoitusboksi = ttk.Combobox(
-        osoitusframe,
+        # tarkista-nappi, joka kutsuu tarkistusfunktiota
+        check_pairless_answer = ttk.Button(
+            pairless_frame,
+            text="Tarkista",
+            command=lambda: check_entry(self.scrollable_frame, pairless_field, textfields.pariton_oikeat, feedback_label_pairless, textfields.pariton_vaihtoehdot, continue_button3, check_pairless_answer)
+        )
+        check_pairless_answer.pack(pady=10)
+
+        tip_pairless = ttk.Button(pairless_frame, text="Vihje", command=lambda: (popup_window(pairless_frame, textfields.pariton_vihje1), tip_2_pairless.pack(pady=(5, 10))))
+        tip_pairless.pack(pady=(5, 10))
+
+        tip_2_pairless = ttk.Button(pairless_frame, text="Vihje 2", command=lambda: popup_window(pairless_frame, textfields.pariton_vihje2))
+
+        evidence_frame = tk.Frame(self.scrollable_frame, bg="white")
+
+        choose_evidence = ttk.Combobox(
+        evidence_frame,
         values=textfields.osoitusvaihtoehdot,
         width=60,
         state="readonly",
         font=("Georgia", 11)
     )
-        osoitusboksi.current(1)
-        osoitusboksi.pack(pady=(5, 10))
+        choose_evidence.current(1)
+        choose_evidence.pack(pady=(5, 10))
 
-        palauteosoitus = tk.Label(osoitusframe, text="", font=("Georgia", 12), bg="white")
-        palauteosoitus.pack(pady=10)
+        feedback_label_evidence = tk.Label(evidence_frame, text="", font=("Georgia", 12), bg="white")
+        feedback_label_evidence.pack(pady=10)
 
         # tarkista-nappi, joka kutsuu tarkistusfunktiota
-        tarkista_nappi4 = ttk.Button(
-            osoitusframe,
+        check_evidence_answer = ttk.Button(
+            evidence_frame,
             text="Tarkista", #muuta väitteet osoituksiksi uuteen
-            command=lambda: check_combobox(self.scrollable_frame, osoitusboksi, textfields.osoitusvastaus, palauteosoitus, textfields.osoituspalautteet, button4, tarkista_nappi4)
+            command=lambda: check_combobox(self.scrollable_frame, choose_evidence, textfields.osoitusvastaus, feedback_label_evidence, textfields.osoituspalautteet, continue_button4, check_evidence_answer)
         )
-        tarkista_nappi4.pack(pady=10)
+        check_evidence_answer.pack(pady=10)
 
-        muotoiluframe = tk.Frame(self.scrollable_frame, bg="white")
+        formatting_frame = tk.Frame(self.scrollable_frame, bg="white")
 
-        muotoilu_kentta = tk.Entry(muotoiluframe, width=20)
-        muotoilu_kentta.pack(pady=10)
+        formatting_field = tk.Entry(formatting_frame, width=20)
+        formatting_field.pack(pady=10)
 
-        muotoilu_palaute = tk.Label(muotoiluframe, text="", font=("Georgia", 12), bg="white")
-        muotoilu_palaute.pack(pady=10)
+        feedback_label_formatting = tk.Label(formatting_frame, text="", font=("Georgia", 12), bg="white")
+        feedback_label_formatting.pack(pady=10)
 
         # tarkista-nappi, joka kutsuu tarkistusfunktiota
-        tarkista_nappi5 = ttk.Button(
-            muotoiluframe,
+        check_formatting_answer = ttk.Button(
+            formatting_frame,
             text="Tarkista", # muokkaa nämä
-            command=lambda: check_entry(self.scrollable_frame, muotoilu_kentta, textfields.pariton_oikeat, muotoilu_palaute, textfields.pariton_vaihtoehdot, button4, tarkista_nappi5)
+            command=lambda: check_entry(self.scrollable_frame, formatting_field, textfields.pariton_oikeat, feedback_label_formatting, textfields.pariton_vaihtoehdot, continue_button4, check_formatting_answer)
         )
-        tarkista_nappi5.pack(pady=10)
+        check_formatting_answer.pack(pady=10)
 
-        jaollinen_button = ttk.Button(muotoiluframe, text="Vihje", command=lambda: popup_window(muotoiluframe, textfields.pariton_vihje1))
-        jaollinen_button.pack(pady=(5, 10))
+        tip_divisible = ttk.Button(formatting_frame, text="Vihje", command=lambda: popup_window(formatting_frame, textfields.pariton_vihje1))
+        tip_divisible.pack(pady=(5, 10))
 
 
 
 
         # Jatka-nappi piilottaa framen ja lisää uuden tekstin näytölle
-        button = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame,textfields.oletusjatko), vaiteframe.pack()))
+        continue_button1 = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame,textfields.oletusjatko), statement_frame.pack()))
 
-        button2 = ttk.Button(vaiteframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,vaiteframe,textfields.vaitejatko), paritonframe.pack()))
+        continue_button2 = ttk.Button(statement_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,statement_frame,textfields.vaitejatko), pairless_frame.pack()))
 
-        button3 = ttk.Button(paritonframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,paritonframe,textfields.paritonjatko), osoitusframe.pack()))
+        continue_button3 = ttk.Button(pairless_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,pairless_frame,textfields.paritonjatko), evidence_frame.pack()))
 
-        button4 = ttk.Button(osoitusframe, text="Jatka", command=lambda: (jatka(self.scrollable_frame,osoitusframe,textfields.osoitusjatko), muotoiluframe.pack()))
+        continue_button4 = ttk.Button(evidence_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,evidence_frame,textfields.osoitusjatko), formatting_frame.pack()))
