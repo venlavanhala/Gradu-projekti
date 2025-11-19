@@ -14,7 +14,7 @@ def new_text(screeni, text):
     highlightthickness=0
     )
     textfield.insert("1.0", text)
-    format_text(textfield)
+    format_textfield_size(textfield)
     textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
 
 # tarkista monivalinta
@@ -32,7 +32,7 @@ def check_combobox(screeni, choice, right_answer, label, feedback, button, check
         highlightthickness=0
         )
         textfield.insert("1.0", answer)
-        format_text(textfield)
+        format_textfield_size(textfield)
         textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
         checkbutton.pack_forget()
         button.pack()
@@ -53,7 +53,7 @@ def check_entry(screeni, entry, right_answer, label, feedback, button, checkbutt
         highlightthickness=0
         )
         textfield.insert("1.0", answer)
-        format_text(textfield)
+        format_textfield_size(textfield)
         textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
         checkbutton.pack_forget()
         button.pack()

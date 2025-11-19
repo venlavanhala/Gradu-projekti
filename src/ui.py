@@ -46,7 +46,7 @@ class UI:
         feedback_label = tk.Label(text="", font=("Georgia", 12), bg="white")
         feedback_label.pack(pady=10)
 
-        # tarkista-nappi, joka kutsuu tarkistusfunktiota
+        # tarkista-nappi, joka kutsuu palautelabelin uusimisfunktiota ja tehtävän tarkistusfunktiota
         check_assumption_answer = ttk.Button(
             frame,
             text="Tarkista",
@@ -85,7 +85,7 @@ class UI:
         check_pairless_answer = ttk.Button(
             pairless_frame,
             text="Tarkista",
-            command=lambda: (move_label(feedback_label, pairless_frame),check_entry(self.scrollable_frame, pairless_field, textfields.pariton_oikeat, feedback_label, textfields.pariton_vaihtoehdot, continue_button3, check_pairless_answer)))
+            command=lambda: (move_label(feedback_label, pairless_frame), check_entry(self.scrollable_frame, pairless_field, textfields.pariton_oikeat, feedback_label, textfields.pariton_vaihtoehdot, continue_button3, check_pairless_answer)))
         check_pairless_answer.pack(pady=10)
 
         tip_pairless = ttk.Button(pairless_frame, text="Vihje", command=lambda: (popup_window(pairless_frame, textfields.pariton_vihje1), tip_2_pairless.pack(pady=(5, 10))))
@@ -109,7 +109,7 @@ class UI:
         check_evidence_answer = ttk.Button(
             evidence_frame,
             text="Tarkista", #muuta väitteet osoituksiksi uuteen
-            command=lambda: (move_label(feedback_label, evidence_frame),check_combobox(self.scrollable_frame, choose_evidence, textfields.osoitusvastaus, feedback_label, textfields.osoituspalautteet, continue_button4, check_evidence_answer))
+            command=lambda: (move_label(feedback_label, evidence_frame), check_combobox(self.scrollable_frame, choose_evidence, textfields.osoitusvastaus, feedback_label, textfields.osoituspalautteet, continue_button4, check_evidence_answer))
         )
         check_evidence_answer.pack(pady=10)
 
@@ -121,8 +121,8 @@ class UI:
         # tarkista-nappi, joka kutsuu tarkistusfunktiota
         check_formatting_answer = ttk.Button(
             formatting_frame,
-            text="Tarkista", # muokkaa nämä
-            command=lambda: (move_label(feedback_label, formatting_frame),check_entry(self.scrollable_frame, formatting_field, textfields.pariton_oikeat, feedback_label, textfields.pariton_vaihtoehdot, continue_button4, check_formatting_answer))
+            text="Tarkista",
+            command=lambda: (move_label(feedback_label, formatting_frame), check_entry(self.scrollable_frame, formatting_field, textfields.pariton_oikeat, feedback_label, textfields.pariton_vaihtoehdot, continue_button4, check_formatting_answer))
         )
         check_formatting_answer.pack(pady=10)
 

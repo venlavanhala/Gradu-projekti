@@ -5,6 +5,8 @@ tee loput todistuksesta
 tarkistus-napin uudelleenkierrätys?
 
 mieti toimintoja uudelleen
+    - onko jotain turhaa?
+    - voiko tehdä yksinkertaisemmin tai paremmin?
 
 tietoboksit voisivat olla eri näköisiä kuin todistusosio
 
@@ -15,5 +17,3 @@ halutaanko hyödyntää poetryä ohjelman suorituksessa? nyt se ei ehkä ole muk
 pitää asentaa pyinstaller ennen setuppia?
 
 voi olla, että asennettu omalle koneelle mutta ei virtuaaliympäristössä
-
-ei pycachea gittiin

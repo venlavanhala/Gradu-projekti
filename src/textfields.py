@@ -66,5 +66,6 @@ osoitusjatko ="Kirjoita 4kn+2k+2n+1 muodossa [2 \u00B7 p+1], kun p \u2208 \u2124
 kirjoitusvihje = "Ota luku 2 yhteiseksi tekijäksi niin, että voit kirjoittaa vastauksen muodossa 2(p)+1."
 
 kirjoitusvastaus = ["2(2kn+n+k)+1", "2(n+2kn+k)+1", "2(2kn+n+k)+1","2(n+k+2n)+1","2(k+n+2kn)"]
-# hankala kun vastauksen luvut voi kirjoittaa monella tavalla tai monessa järjestyksessä
+# hankala kun vastauksen luvut voi kirjoittaa monella tavalla tai monessa järjestyksessä, pitäisikö antaa selkeämpi vastausmuoto?
+
 

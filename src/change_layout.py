@@ -19,8 +19,8 @@ def scrollable_screen(root):
 
     return scrollable_frame
 
-# muotoilee tekstikentän muodon
-def format_text(textfield):
+# muotoilee tekstikentän muodon ja koon
+def format_textfield_size(textfield):
     text = textfield.get("1.0", "end-1c")
     lines = text.split('\n')
     lines = [len(line) for line in lines]
@@ -40,7 +40,7 @@ def format_textfield(screen, text):
         highlightthickness=0
     )
     textfield.insert("1.0", text)
-    format_text(textfield)
+    format_textfield_size(textfield)
     textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5))
 
 # vaihda labelin vanha frame uuteen
