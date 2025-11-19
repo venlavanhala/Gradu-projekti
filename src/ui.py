@@ -72,7 +72,7 @@ class UI:
         check_statement_answer = ttk.Button(
             statement_frame,
             text="Tarkista",
-            command=lambda: (move_label(feedback_label, statement_frame),check_combobox(self.scrollable_frame, choose_statement, textfields.vaitevastaus, feedback_label, textfields.vaitteet, continue_button2, check_statement_answer))
+            command=lambda: (move_label(feedback_label, statement_frame), check_combobox(self.scrollable_frame, choose_statement, textfields.vaitevastaus, feedback_label, textfields.vaitteet, continue_button2, check_statement_answer))
         )
         check_statement_answer.pack(pady=10)
 
@@ -108,7 +108,7 @@ class UI:
         # tarkista-nappi, joka kutsuu tarkistusfunktiota
         check_evidence_answer = ttk.Button(
             evidence_frame,
-            text="Tarkista", #muuta väitteet osoituksiksi uuteen
+            text="Tarkista",
             command=lambda: (move_label(feedback_label, evidence_frame), check_combobox(self.scrollable_frame, choose_evidence, textfields.osoitusvastaus, feedback_label, textfields.osoituspalautteet, continue_button4, check_evidence_answer))
         )
         check_evidence_answer.pack(pady=10)

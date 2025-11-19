@@ -30,11 +30,12 @@ def format_textfield_size(textfield):
 # korkeus = \n määrä + pisin/12
 
 # muotoilee tekstikentän ja lisää tekstin
-def format_textfield(screen, text):
+def format_textfield(screen, text, backround_color="black"):
     textfield = tk.Text(
         master=screen,
         wrap="word",
         bg="white",
+        fg=backround_color,
         relief="flat",
         borderwidth=0,
         highlightthickness=0

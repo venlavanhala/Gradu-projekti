@@ -1,5 +1,3 @@
-muutokset menee väärään etäbranchiin
-
 tee loput todistuksesta
 
 tarkistus-napin uudelleenkierrätys?
@@ -9,6 +7,9 @@ mieti toimintoja uudelleen
     - voiko tehdä yksinkertaisemmin tai paremmin?
 
 tietoboksit voisivat olla eri näköisiä kuin todistusosio
+
+lisää tekstit vasta kun framet on tehty?
+    - muuten vaikeaa pysyä perässä, mitä tekstejä missäkin
 
 windows & mac toimivuudet
 

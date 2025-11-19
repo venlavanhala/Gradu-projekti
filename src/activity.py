@@ -3,20 +3,6 @@ from tkinter import ttk
 from change_layout import *
 from textfields import *
 
-def new_text(screeni, text):
-    textfield = tk.Text(
-    master=screeni,
-    font=("Arial", 12),
-    wrap="word",
-    bg="white",
-    relief="flat",
-    borderwidth=0,
-    highlightthickness=0
-    )
-    textfield.insert("1.0", text)
-    format_textfield_size(textfield)
-    textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
-
 # tarkista monivalinta
 def check_combobox(screeni, choice, right_answer, label, feedback, button, checkbutton):
     answer = choice.get()
@@ -68,7 +54,7 @@ def jatka_nappi(screeni, frame, seuraava_frame,teksti):
 # piilotetaan edellinen näyttö ja näytetään seuraava teksti
 def jatka(naytto, screen, teksti):
     screen.pack_forget()
-    new_text(naytto, teksti)
+    format_textfield(naytto, teksti)
 
 def popup_window(screen, text):
     popup = tk.Toplevel(screen)
