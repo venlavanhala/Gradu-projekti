@@ -52,8 +52,9 @@ def jatka_nappi(screeni, frame, seuraava_frame,teksti):
     button.pack(pady=(5, 10))
 
 # piilotetaan edellinen näyttö ja näytetään seuraava teksti
-def jatka(naytto, screen):
+def jatka(naytto, screen, teksti):
     screen.pack_forget()
+    format_textfield(naytto, teksti)
 
 def popup_window(screen, text):
     popup = tk.Toplevel(screen)

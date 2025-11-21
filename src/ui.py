@@ -56,7 +56,6 @@ class UI:
 
         # tehdään uusi frame väitemonivalinnalle
         statement_frame = tk.Frame(self.scrollable_frame, bg="white")
-        format_textfield(statement_frame, textfields.oletusjatko)
 
         # toinen monivalintakysymys
         choose_statement = ttk.Combobox(
@@ -78,8 +77,6 @@ class UI:
         check_statement_answer.pack(pady=10)
 
         pairless_frame = tk.Frame(self.scrollable_frame, bg="white")
-        format_textfield(pairless_frame, textfields.vaitejatko, "purple")
-        format_textfield(pairless_frame, textfields.vaitejatkokysymys, )
 
         pairless_field = tk.Entry(pairless_frame, width=20)
         pairless_field.pack(pady=10)
@@ -97,7 +94,6 @@ class UI:
         tip_2_pairless = ttk.Button(pairless_frame, text="Vihje 2", command=lambda: popup_window(pairless_frame, textfields.pariton_vihje2))
 
         evidence_frame = tk.Frame(self.scrollable_frame, bg="white")
-        format_textfield(evidence_frame, textfields.paritonjatko)
 
         choose_evidence = ttk.Combobox(
         evidence_frame,
@@ -118,7 +114,6 @@ class UI:
         check_evidence_answer.pack(pady=10)
 
         formatting_frame = tk.Frame(self.scrollable_frame, bg="white")
-        format_textfield(formatting_frame, textfields.osoitusjatko)
 
         formatting_field = tk.Entry(formatting_frame, width=20)
         formatting_field.pack(pady=10)
@@ -136,10 +131,10 @@ class UI:
 
 
         # Jatka-nappi piilottaa framen ja lisää uuden tekstin näytölle
-        continue_button1 = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame), statement_frame.pack()))
+        continue_button1 = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame,textfields.oletusjatko), statement_frame.pack()))
 
-        continue_button2 = ttk.Button(statement_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,statement_frame), pairless_frame.pack()))
+        continue_button2 = ttk.Button(statement_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,statement_frame,textfields.vaitejatko), pairless_frame.pack()))
 
-        continue_button3 = ttk.Button(pairless_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,pairless_frame), evidence_frame.pack()))
+        continue_button3 = ttk.Button(pairless_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,pairless_frame,textfields.paritonjatko), evidence_frame.pack()))
 
-        continue_button4 = ttk.Button(evidence_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,evidence_frame), formatting_frame.pack()))
+        continue_button4 = ttk.Button(evidence_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,evidence_frame,textfields.osoitusjatko), formatting_frame.pack()))
