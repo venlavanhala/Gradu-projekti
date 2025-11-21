@@ -42,6 +42,8 @@ def format_textfield(screen, text, backround_color="black"):
     )
     textfield.insert("1.0", text)
     format_textfield_size(textfield)
+
+def pack_field(textfield):
     textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5))
 
 # vaihda labelin vanha frame uuteen
