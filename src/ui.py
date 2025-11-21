@@ -16,11 +16,17 @@ class UI:
         label = ttk.Label(self.scrollable_frame, text="Harjoittele todistamista", font=("Georgia", 16, "bold"))
         label.pack(pady=(20, 15))
 
+        # ensimmäisten tekstikenttien sisällöt
+        textfields_list = [
+            textfields.johdanto,
+            textfields.tehtavananto,
+            textfields.alkuteksti,
+            textfields.vaite_muotoilu
+        ]
+
         # luodaan tekstikentät ja lisätään niihin tekstit
-        format_textfield(self.scrollable_frame, textfields.johdanto)
-        format_textfield(self.scrollable_frame, textfields.tehtavananto)
-        format_textfield(self.scrollable_frame, textfields.pohjustus, "purple")
-        format_textfield(self.scrollable_frame, textfields.oletus)
+        for text in textfields_list:
+            format_textfield(self.scrollable_frame, text)
 
         # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
         frame = tk.Frame(self.scrollable_frame, bg="white")
@@ -50,9 +56,7 @@ class UI:
 
         # tehdään uusi frame väitemonivalinnalle
         statement_frame = tk.Frame(self.scrollable_frame, bg="white")
-        # muotoile oletusjatkoteksti
-        format_textfield(statement_frame, textfields.vaitekysymys, "purple")
-        format_textfield(self.scrollable_frame, textfields.vaite)
+        format_textfield(statement_frame, textfields.oletusjatko)
 
         # toinen monivalintakysymys
         choose_statement = ttk.Combobox(
@@ -74,8 +78,8 @@ class UI:
         check_statement_answer.pack(pady=10)
 
         pairless_frame = tk.Frame(self.scrollable_frame, bg="white")
-        format_textfield(pairless_frame, textfields.kuuluu_joukkoon, "purple")
-        format_textfield(pairless_frame, textfields.pariton_luku)
+        format_textfield(pairless_frame, textfields.vaitejatko, "purple")
+        format_textfield(pairless_frame, textfields.vaitejatkokysymys, )
 
         pairless_field = tk.Entry(pairless_frame, width=20)
         pairless_field.pack(pady=10)
@@ -93,11 +97,7 @@ class UI:
         tip_2_pairless = ttk.Button(pairless_frame, text="Vihje 2", command=lambda: popup_window(pairless_frame, textfields.pariton_vihje2))
 
         evidence_frame = tk.Frame(self.scrollable_frame, bg="white")
-        format_textfield(evidence_frame, textfields.pariton_tausta, "purple")
-        format_textfield(evidence_frame, textfields.pariton_jatko)
-        format_textfield(evidence_frame, textfields.pariton_tausta2, "purple")
-        format_textfield(evidence_frame, textfields.pariton_jatko2)
-        format_textfield(evidence_frame, textfields.pariton_tausta3, "purple")
+        format_textfield(evidence_frame, textfields.paritonjatko)
 
         choose_evidence = ttk.Combobox(
         evidence_frame,

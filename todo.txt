@@ -12,10 +12,6 @@ tietoboksit voisivat olla eri näköisiä kuin todistusosio
     - kaikki ajatukset ja ohjaukset eri värillä?
         - selkeää, mitä tapahtuu todistuksessa ja mitä muuten
 
-lopussa tietoboksit ja kysymykset poistetaan
-
-säilytettävät tekstit poistuvat
-
 esim. koko screeni, voisiko antaa default parametriksi?
     - myös feedback label
     - jos antaisi olion parametriksi
