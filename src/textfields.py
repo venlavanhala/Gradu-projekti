@@ -4,7 +4,7 @@ tehtavananto = "Todista: Kahden parittoman luvun a ja b tulo on pariton luku."
 
 alkuteksti = "Ensin täytyy löytää oletus ja väite, jota ollaan ratkaisemassa.Oletus on jokin tieto, josta lähdetään liikkeelle ja jota voimme pitää tunnettuna. Väite on jokin asia, jonka haluamme todistaa.\nLause 'Kahden parittoman kokonaisluvun tulo on pariton kokonaisluku' voitaisiin myös ilmaista muodossa:"
 
-vaite_muotoilu = "Jos [oletus], niin [väite].\n\nMikä oletus on? \n\nOletus:"
+vaite_muotoilu = "Jos [oletus], niin [väite].\n\nVoidaan merkitä lukuja kirjaimilla a ja b. Mikä oletus on? \n\nOletus:"
 
 oletusvaihtoehdot = [
     "a ja b ovat parittomia kokonaislukuja",
@@ -33,7 +33,7 @@ vaitteet = {"a \u00B7 b on parillinen kokonaisluku":"Juuri näin!",
 
 vaitevastaus = ["a \u00B7 b on parillinen kokonaisluku", "lukujen a ja b tulo on pariton luku"]
 
-vaitejatko = "Voidaan merkitä lukuja kirjaimilla a ja b. Kokonaislukujen joukkoa merkitään kirjaimella \u2124, ja joukkoon kuulumista merkillä \u2208.\nVoimme siis merkitä: a, b \u2208 \u2124.\nParilliset luvut voidaan ilmaista muodossa a=2k (k \u2208 \u2124), koska parilliset luvut ovat aina jaollisia luvulla 2."
+vaitejatko = "Kokonaislukujen joukkoa merkitään kirjaimella \u2124, ja joukkoon kuulumista merkillä \u2208.\nVoimme siis merkitä: a, b \u2208 \u2124.\nParilliset luvut voidaan ilmaista muodossa a=2k (k \u2208 \u2124), koska parilliset luvut ovat aina jaollisia luvulla 2."
 
 vaitejatkokysymys = "Miten parittomat luvut voitaisiin ilmaista tämän tyyppisesti kokonaisluvun k avulla?\nKirjoita tekstikenttään, miten pariton luku a voitaisiin ilmaista. Kirjoita vastaus muodossa a=[lauseke]."
 
