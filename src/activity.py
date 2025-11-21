@@ -22,10 +22,8 @@ def check_combobox(screeni, choice, right_answer, label, feedback, button, check
         textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
         checkbutton.pack_forget()
         button.pack()
-        return True
     else:
         label.config(text=feedback[answer], fg="blue")
-        return False
 
 def check_entry(screeni, entry, right_answer, label, feedback, button, checkbutton):
     answer = entry.get().replace(" ","").lower()
@@ -54,7 +52,7 @@ def jatka_nappi(screeni, frame, seuraava_frame,teksti):
     button.pack(pady=(5, 10))
 
 # piilotetaan edellinen näyttö ja näytetään seuraava teksti
-def jatka(screen):
+def jatka(naytto, screen):
     screen.pack_forget()
 
 def popup_window(screen, text):
