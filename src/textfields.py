@@ -2,9 +2,10 @@ johdanto = "Tässä harjoituksessa tutustutaan erään lukuteorian lauseen todis
 
 tehtavananto = "Todista: Kahden parittoman luvun a ja b tulo on pariton luku."
 
-alkuteksti = "Ensin täytyy löytää oletus ja väite, jota ollaan ratkaisemassa.Oletus on jokin tieto, josta lähdetään liikkeelle ja jota voimme pitää tunnettuna. Väite on jokin asia, jonka haluamme todistaa.\nLause 'Kahden parittoman kokonaisluvun tulo on pariton kokonaisluku' voitaisiin myös ilmaista muodossa:"
+# taustaa
+pohjustus = "Ensin täytyy löytää oletus ja väite, jota ollaan ratkaisemassa.Oletus on jokin tieto, josta lähdetään liikkeelle ja jota voimme pitää tunnettuna. Väite on jokin asia, jonka haluamme todistaa. Lause 'Kahden parittoman kokonaisluvun tulo on pariton kokonaisluku' voitaisiin myös ilmaista muodossa:\n\nJos [oletus], niin [väite].\n\nMerkitään lukuja kirjaimilla a ja b. Mikä oletus on?"
 
-vaite_muotoilu = "Jos [oletus], niin [väite].\n\nMikä oletus on? \n\nOletus:"
+oletus = "Oletus:"
 
 oletusvaihtoehdot = [
     "a ja b ovat parittomia kokonaislukuja",
@@ -19,7 +20,10 @@ oletukset = {"a ja b ovat parittomia kokonaislukuja":"Juuri näin!",
               "lukujen a ja b tulo on pariton luku":"Onko tämä oletus vai väite?"
               }
 
-oletusjatko = "Mikä väite on?\n\nVäite:"
+# taustaa
+vaitekysymys = "Mikä väite on?"
+
+vaite = "Väite:"
 
 vaitevaihtoehdot = [
     "a \u00B7 b on parillinen kokonaisluku",
@@ -33,9 +37,10 @@ vaitteet = {"a \u00B7 b on parillinen kokonaisluku":"Juuri näin!",
 
 vaitevastaus = ["a \u00B7 b on parillinen kokonaisluku", "lukujen a ja b tulo on pariton luku"]
 
-vaitejatko = "Voidaan merkitä lukuja kirjaimilla a ja b. Kokonaislukujen joukkoa merkitään kirjaimella \u2124, ja joukkoon kuulumista merkillä \u2208.\nVoimme siis merkitä: a, b \u2208 \u2124.\nParilliset luvut voidaan ilmaista muodossa a=2k (k \u2208 \u2124), koska parilliset luvut ovat aina jaollisia luvulla 2."
+# taustaa
+kuuluu_joukkoon = "Kokonaislukujen joukkoa merkitään kirjaimella \u2124, ja joukkoon kuulumista merkillä \u2208.\nVoimme siis merkitä: a, b \u2208 \u2124.\nParilliset luvut voidaan ilmaista muodossa a=2k (k \u2208 \u2124), koska parilliset luvut ovat aina jaollisia luvulla 2.\n\nMiten parittomat luvut voitaisiin ilmaista tämän tyyppisesti kokonaisluvun k avulla?\nKirjoita tekstikenttään, miten pariton luku a voitaisiin ilmaista. Kirjoita vastaus muodossa a=[lauseke]."
 
-vaitejatkokysymys = "Miten parittomat luvut voitaisiin ilmaista tämän tyyppisesti kokonaisluvun k avulla?\nKirjoita tekstikenttään, miten pariton luku a voitaisiin ilmaista. Kirjoita vastaus muodossa a=[lauseke]."
+pariton_luku = "Pariton luku voidaan ilmaista muodossa:"
 
 pariton_oikeat = ["a=2k+1","a=2k-1"]
 
@@ -47,9 +52,18 @@ pariton_vihje1 = "Jokaisen parillisen luvun jälkeen tulee pariton luku."
 
 pariton_vihje2 = "Parilliset luvut voidaan kirjoittaa muodossa a=2k. \nJos lisäämme parilliseen lukuun luvun 1, siitä tulee pariton."
 
-paritonjatko = "Nyt meillä on yksi muuttuja, joka ilmaisee paritonta lukua. Tarvitsemme vielä toisen parittoman luvun. Käytämme siihen eri muuttujia, koska parittomat luvut eivät välttämättä ole samoja. "
-paritonjatko+="Määritellään b=2n+1, kun n \u2208 \u2124.\nVoimme nyt kirjoittaa tulon lukujen a ja b avulla. Kirjoitamme tulon, jotta voimme tutkia sen parittomuutta.\n\na \u00B7 b = (2k+1)(2n+1)\n\n"
-paritonjatko+="Lasketaan kertolasku auki:\n\na \u00B7 b = 4kn+2k+2n+1\n\nHaluamme osoittaa, että lukujen a ja b tulo 4kn+2k+2n+1 on pariton luku. Millä tavalla seuraavista voimme todistaa tämän?"
+# taustaa
+pariton_tausta = "Nyt meillä on yksi muuttuja, joka ilmaisee paritonta lukua. Tarvitsemme vielä toisen parittoman luvun. Käytämme siihen eri muuttujia, koska parittomat luvut eivät välttämättä ole samoja."
+
+pariton_jatko = "Määritellään b=2n+1, kun n \u2208 \u2124.\nVoimme nyt kirjoittaa tulon lukujen a ja b avulla."
+
+#taustaa
+pariton_tausta2 = "Kirjoitamme tulon, jotta voimme tutkia sen parittomuutta."
+
+pariton_jatko2 = "a \u00B7 b = (2k+1)(2n+1)\n\nLasketaan kertolasku auki:\n\na \u00B7 b = 4kn+2k+2n+1"
+
+# taustaa
+pariton_tausta3 = "Haluamme osoittaa, että lukujen a ja b tulo 4kn+2k+2n+1 on pariton luku. Millä tavalla seuraavista voimme todistaa tämän?"
 
 osoitusvaihtoehdot = [
     "Osoitetaan, että 4kn+2k+2n+1 ei ole jaollinen kahdella",
@@ -63,11 +77,10 @@ osoituspalautteet = {"Osoitamme, että 4kn+2k+2n+1 on jollain muulla luvulla kui
                      "Osoitetaan, että 4kn+2k+2n+1 ei ole jaollinen kahdella":"Oikein!",
                      "Osoitetaan, että a \u00B7 b voidaan kirjoittaa muodossa 2p+1, jossa p \u2208 \u2124":"Kyllä!"}
 
-osoitusjatko ="Kirjoita 4kn+2k+2n+1 muodossa [2 \u00B7 p+1], kun p \u2208 \u2124."
+# taustaa
+osoitusjatko ="Kirjoita 4kn+2k+2n+1 muodossa [2 \u00B7 p+1], kun p \u2208 \u2124.\n\nOta luku 2 yhteiseksi tekijäksi niin, että voit kirjoittaa vastauksen muodossa 2(p)+1."
 
-kirjoitusvihje = "Ota luku 2 yhteiseksi tekijäksi niin, että voit kirjoittaa vastauksen muodossa 2(p)+1."
-
-kirjoitusvastaus = ["2(2kn+n+k)+1", "2(n+2kn+k)+1", "2(2kn+n+k)+1","2(n+k+2n)+1","2(k+n+2kn)"]
+kirjoitusvastaus = ["2(2kn+n+k)+1", "2(n+2kn+k)+1", "2(2kn+n+k)+1","2(n+k+2n)+1","2(k+n+2kn)+1"]
 # hankala kun vastauksen luvut voi kirjoittaa monella tavalla tai monessa järjestyksessä, pitäisikö antaa selkeämpi vastausmuoto?
 
 
