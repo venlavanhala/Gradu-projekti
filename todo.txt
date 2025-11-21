@@ -27,3 +27,17 @@ halutaanko hyödyntää poetryä ohjelman suorituksessa? nyt se ei ehkä ole muk
 pitää asentaa pyinstaller ennen setuppia?
 
 voi olla, että asennettu omalle koneelle mutta ei virtuaaliympäristössä
+
+säilytettävien tekstien pitäisi ilmestyä kun ne halutaan näyttää,
+mutta pysyä sen jälkeen
+    - pitää varmaa pakata vasta kun halutaan, mutta laittaa
+    isännäksi self.scrollable_frame
+
+poistettavat tekstit
+    - isännäksi oma frame
+    - lisätään fieldit listaan, jotta voidaan tehdä funktio
+    joka poistaa ne lopussa näkyvistä
+
+säilytettävät
+    jos ensin luon ilman isäntää, sitten move_label(in_=frame, pady=20)
+    jolloin ilmestyy silloiseen frameen, sitten move_label pysyvään frameen

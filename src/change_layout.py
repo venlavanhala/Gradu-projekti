@@ -30,12 +30,12 @@ def format_textfield_size(textfield):
 # korkeus = \n määrä + pisin/12
 
 # muotoilee tekstikentän ja lisää tekstin
-def format_textfield(screen, text, backround_color="black"):
+def format_textfield(text, text_colour="black", screen=None):
     textfield = tk.Text(
         master=screen,
         wrap="word",
         bg="white",
-        fg=backround_color,
+        fg=text_colour,
         relief="flat",
         borderwidth=0,
         highlightthickness=0
@@ -43,6 +43,7 @@ def format_textfield(screen, text, backround_color="black"):
     textfield.insert("1.0", text)
     format_textfield_size(textfield)
     textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5))
+    return textfield
 
 # vaihda labelin vanha frame uuteen
 def move_label(label, frame):

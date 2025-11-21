@@ -17,10 +17,10 @@ class UI:
         label.pack(pady=(20, 15))
 
         # luodaan tekstikentät ja lisätään niihin tekstit
-        format_textfield(self.scrollable_frame, textfields.johdanto)
-        format_textfield(self.scrollable_frame, textfields.tehtavananto)
-        format_textfield(self.scrollable_frame, textfields.pohjustus, "purple")
-        format_textfield(self.scrollable_frame, textfields.oletus)
+        format_textfield(textfields.johdanto, screen=self.scrollable_frame)
+        format_textfield(textfields.tehtavananto, screen=self.scrollable_frame)
+        format_textfield(textfields.pohjustus, "purple", self.scrollable_frame)
+        format_textfield(textfields.oletus, screen=self.scrollable_frame)
 
         # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
         frame = tk.Frame(self.scrollable_frame, bg="white")
@@ -44,15 +44,17 @@ class UI:
         check_assumption_answer = ttk.Button(
             frame,
             text="Tarkista",
-            command=lambda: (move_label(feedback_label, frame), check_combobox(self.scrollable_frame, choose_assumption, textfields.oletusvastaus, feedback_label, textfields.oletukset, continue_button1, check_assumption_answer))
-        )
+            command=lambda: (
+                move_label(feedback_label, frame),
+                check_combobox(self.scrollable_frame, choose_assumption, textfields.oletusvastaus, feedback_label, textfields.oletukset, continue_button1, check_assumption_answer))
+            )
         check_assumption_answer.pack(pady=10)
 
         # tehdään uusi frame väitemonivalinnalle
         statement_frame = tk.Frame(self.scrollable_frame, bg="white")
         # muotoile oletusjatkoteksti
-        format_textfield(statement_frame, textfields.vaitekysymys, "purple")
-        format_textfield(self.scrollable_frame, textfields.vaite)
+        format_textfield(textfields.vaitekysymys, "purple", statement_frame)
+        #format_textfield(self.scrollable_frame, textfields.vaite)
 
         # toinen monivalintakysymys
         choose_statement = ttk.Combobox(
@@ -69,13 +71,14 @@ class UI:
         check_statement_answer = ttk.Button(
             statement_frame,
             text="Tarkista",
-            command=lambda: (move_label(feedback_label, statement_frame), check_combobox(self.scrollable_frame, choose_statement, textfields.vaitevastaus, feedback_label, textfields.vaitteet, continue_button2, check_statement_answer))
+            command=lambda: (move_label(feedback_label, statement_frame),
+                             check_combobox(self.scrollable_frame, choose_statement, textfields.vaitevastaus, feedback_label, textfields.vaitteet, continue_button2, check_statement_answer))
         )
         check_statement_answer.pack(pady=10)
 
         pairless_frame = tk.Frame(self.scrollable_frame, bg="white")
-        format_textfield(pairless_frame, textfields.kuuluu_joukkoon, "purple")
-        format_textfield(pairless_frame, textfields.pariton_luku)
+        #format_textfield(pairless_frame, textfields.kuuluu_joukkoon, "purple")
+        #format_textfield(pairless_frame, textfields.pariton_luku)
 
         pairless_field = tk.Entry(pairless_frame, width=20)
         pairless_field.pack(pady=10)
@@ -93,11 +96,11 @@ class UI:
         tip_2_pairless = ttk.Button(pairless_frame, text="Vihje 2", command=lambda: popup_window(pairless_frame, textfields.pariton_vihje2))
 
         evidence_frame = tk.Frame(self.scrollable_frame, bg="white")
-        format_textfield(evidence_frame, textfields.pariton_tausta, "purple")
-        format_textfield(evidence_frame, textfields.pariton_jatko)
-        format_textfield(evidence_frame, textfields.pariton_tausta2, "purple")
-        format_textfield(evidence_frame, textfields.pariton_jatko2)
-        format_textfield(evidence_frame, textfields.pariton_tausta3, "purple")
+        #format_textfield(evidence_frame, textfields.pariton_tausta, "purple")
+        #format_textfield(evidence_frame, textfields.pariton_jatko)
+        #format_textfield(evidence_frame, textfields.pariton_tausta2, "purple")
+        #format_textfield(evidence_frame, textfields.pariton_jatko2)
+        #format_textfield(evidence_frame, textfields.pariton_tausta3, "purple")
 
         choose_evidence = ttk.Combobox(
         evidence_frame,
@@ -118,7 +121,7 @@ class UI:
         check_evidence_answer.pack(pady=10)
 
         formatting_frame = tk.Frame(self.scrollable_frame, bg="white")
-        format_textfield(formatting_frame, textfields.osoitusjatko)
+        format_textfield(textfields.osoitusjatko, screen=formatting_frame)
 
         formatting_field = tk.Entry(formatting_frame, width=20)
         formatting_field.pack(pady=10)
@@ -136,10 +139,38 @@ class UI:
 
 
         # Jatka-nappi piilottaa framen ja lisää uuden tekstin näytölle
-        continue_button1 = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame), statement_frame.pack()))
+        # oletuksen jälkeen:
+        continue_button1 = ttk.Button(frame, text="Jatka", command=lambda: (
+            jatka(frame),
+            format_textfield(textfields.vaitekysymys, "purple", statement_frame),
+            format_textfield(textfields.vaite),
+            move_label(format_textfield(textfields.vaite), frame),
+            statement_frame.pack()
+        ))
 
-        continue_button2 = ttk.Button(statement_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,statement_frame), pairless_frame.pack()))
+        # väitteen jälkeen:
+        continue_button2 = ttk.Button(statement_frame, text="Jatka", command=lambda: (
+            move_label(format_textfield(textfields.vaite), self.scrollable_frame),
+            jatka(statement_frame),
+            pairless_frame.pack(),
+            format_textfield(textfields.pariton_luku, screen=self.scrollable_frame),
+            format_textfield(textfields.kuuluu_joukkoon, "purple", pairless_frame),
+            format_textfield(textfields.pariton_luku, screen=self.scrollable_frame)
+        ))
 
-        continue_button3 = ttk.Button(pairless_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,pairless_frame), evidence_frame.pack()))
-
-        continue_button4 = ttk.Button(evidence_frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,evidence_frame), formatting_frame.pack()))
+        #parittoman luvun muodostuksen jälkeen:
+        continue_button3 = ttk.Button(pairless_frame, text="Jatka", command=lambda: (
+            jatka(pairless_frame),
+            evidence_frame.pack(),
+        format_textfield(textfields.pariton_tausta, "purple", evidence_frame),
+        format_textfield(textfields.pariton_jatko),
+        format_textfield(textfields.pariton_tausta2, "purple", evidence_frame),
+        format_textfield(textfields.pariton_jatko2),
+        format_textfield(textfields.pariton_tausta3, "purple",evidence_frame)
+        ))
+        #osoitustaktiikan jälkeen:
+        continue_button4 = ttk.Button(evidence_frame, text="Jatka", command=lambda: (
+            jatka(evidence_frame),
+            formatting_frame.pack(),
+            format_textfield(textfields.osoitusjatko)))
+        
