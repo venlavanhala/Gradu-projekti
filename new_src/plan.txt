@@ -1,0 +1,15 @@
+Suunnitelma
+-----------
+
+
+koitetaan, tarvitaanko classeja
+
+itse UI:n ei ehkä tarvitse olla class
+
+joka frametiedostossa tehdään oma frame
+
+edit_ui hallinnoi yleisiä ui-juttuja: esim. funktio monivalintaboksin luonnille
+
+logic mm. tarkistaa vastaukset
+
+kun frame ollaan poistamassa, lisätään jätettävät tekstit masteriin
