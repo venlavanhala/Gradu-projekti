@@ -4,8 +4,8 @@ from change_layout import *
 from textfields import *
 
 # tarkista monivalinta
-def check_combobox(screeni, choice, right_answer, label, feedback, button, checkbutton):
-    answer = choice.get()
+def check_combobox(screeni, combobox, right_answer, label, feedback, button, checkbutton):
+    answer = combobox.get()
     if answer == right_answer or answer in right_answer:
         label.config(text=feedback[answer], fg="green", font=("Arial", 12))
         textfield = tk.Text(
@@ -22,6 +22,7 @@ def check_combobox(screeni, choice, right_answer, label, feedback, button, check
         textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
         checkbutton.pack_forget()
         button.pack()
+        combobox.configure(state="disabled")
     else:
         label.config(text=feedback[answer], fg="blue")
 
@@ -38,7 +39,10 @@ def check_entry(screeni, entry, right_answer, label, feedback, button, checkbutt
         borderwidth=0,
         highlightthickness=0
         )
-        textfield.insert("1.0", answer)
+        if answer in ["2k-1","2k+1"]:
+            textfield.insert("1.0", "a="+answer+"  (k \u2208 \u2124)")
+        else:
+            textfield.insert("1.0", answer)
         format_textfield_size(textfield)
         textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
         checkbutton.pack_forget()

@@ -18,3 +18,9 @@ halutaanko hyödyntää poetryä ohjelman suorituksessa? nyt se ei ehkä ole muk
 pitää asentaa pyinstaller ennen setuppia?
 
 voi olla, että asennettu omalle koneelle mutta ei virtuaaliympäristössä
+
+voi olla 2k-1 -> ota huomioon
+
+näyttö on liian alhaalla
+
+osa tekstistä menee taas piiloon
