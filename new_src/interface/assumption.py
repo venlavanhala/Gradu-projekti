@@ -6,9 +6,11 @@ from tkinter import ttk
 import textfields
 from interface.edit_ui import *
 import logic
-
+from interface.statement import *
+from interface.ui import *
 
 def assumption_view(screen):
+
     label = ttk.Label(screen, text="Harjoittele todistamista", font=("Georgia", 16, "bold"))
     label.pack(pady=(5,5))
 
@@ -30,21 +32,23 @@ def assumption_view(screen):
     # monivalintakysymys
     choose_assumption = new_combobox(frame, textfields.oletusvaihtoehdot)
 
-    feedback_label = tk.Label(text="", font=("Georgia", 12), bg="white")
-    feedback_label.pack(pady=5)
+    feedback_label = new_label(frame)
 
-    continue_button = ttk.Button(frame, text="Jatka", command=lambda: (jatka(self.scrollable_frame,frame,textfields.oletusjatko), statement_frame.pack()))
+    continue_button = ttk.Button(frame, text="Jatka", command=lambda: (
+        show_statement()
+    ))
 
     # nappi, jota painamalla tulee result ja UI puoli
 
     def handle_combobox_check():
-        result = logic.check_combobox(choose_assumption.get(), textfields.oletusvastaus)
+        answer = choose_assumption.get()
+        result = logic.check_combobox(answer, textfields.oletusvastaus)
         if result == True:
-            render_combobox_right_answer(result, textfields.oletukset,
-                                         frame, choose_assumption, label,
+            render_combobox_right_answer(answer, textfields.oletukset,
+                                         screen, choose_assumption, feedback_label,
                                          check_assumption_answer, continue_button)
         else:
-            label.config(text=textfields.oletukset[result], fg="blue")
+            render_combobox_wrong_answer(answer, textfields.oletukset, feedback_label)
 
     check_assumption_answer = ttk.Button(
     frame,
@@ -52,5 +56,6 @@ def assumption_view(screen):
     command=lambda: (
         handle_combobox_check()
     ))
-
     check_assumption_answer.pack(pady=5)
+
+    return frame

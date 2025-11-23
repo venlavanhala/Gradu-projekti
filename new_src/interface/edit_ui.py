@@ -1,8 +1,19 @@
 import tkinter as tk
 from tkinter import ttk
 import logic
+from tkinter import Tk
 
 # tekee näytöstä scrollattavan
+
+def create_window():
+    #jopa tämä alku voisi olla oma funktio edit_ui:ssa
+    screen = Tk()
+    screen.title("TkInter esimerkki")
+    screen.geometry("800x900") #näytön koko
+    screen.configure(bg="white")
+    # tee tässä myös scrollattava ikkuna
+    window = scrollable_screen(screen)
+    return window
 
 def scrollable_screen(root):
     canvas = tk.Canvas(root, bg="white", highlightthickness=0)
@@ -65,8 +76,16 @@ def move_label(label, frame):
 
 # tekee ja pakkaa uuden framen
 def new_frame(screen):
-    tk.Frame(screen, bg="white", pady=0)
-    screen.pack()
+    frame = tk.Frame(screen, bg="white", pady=0)
+    frame.pack(fill="none", expand=False)
+    return frame
+
+def new_entry(frame, left_text, right_text):
+    tk.Label(frame, text=left_text, bg="white").pack(side="left")
+    pairless_field = tk.Entry(frame, width=20)
+    pairless_field.pack(side="left",pady=5)
+    tk.Label(frame, text=right_text, bg="white").pack(side="left")
+    return pairless_field
 
 # tekee uuden monivalintatehtävän
 def new_combobox(frame, text):
@@ -82,17 +101,11 @@ def new_combobox(frame, text):
     return excercise
 
 def new_label(frame):
-    label = tk.Label(text="", font=("Georgia", 12), bg="white")
+    label = tk.Label(frame, text="", font=("Georgia", 12), bg="white")
     label.pack(pady=5)
+    return label
 
-def jatka_nappi(screeni, frame, seuraava_frame,teksti):
-    button = ttk.Button(frame, text="Jatka", command=lambda: (jatka(screeni,frame,teksti), seuraava_frame.pack()))
-    button.pack(pady=(5, 10))
-
-# piilotetaan edellinen näyttö ja näytetään seuraava teksti
-def jatka(naytto, screen, teksti):
-    screen.pack_forget()
-    format_textfield(naytto, teksti)
+# piilotetaan edellinen näyttö ja näytetään seuraava frame
 
 def popup_window(screen, text):
     popup = tk.Toplevel(screen)
@@ -104,10 +117,10 @@ def popup_window(screen, text):
     tk.Button(popup, text="Sulje", command=popup.destroy).pack(pady=5)
 
 # oikea vastaus 
-def render_combobox_right_answer(answer,feedback, frame, combobox, label, checkbutton, button):
+def render_combobox_right_answer(answer,feedback, screen, combobox, label, checkbutton, button):
     label.config(text=feedback[answer], fg="green", font=("Arial", 12))
     textfield = tk.Text(
-    master=frame,
+    master=screen,
     font=("Arial", 12),
     wrap="word",
     bg="white",
@@ -122,13 +135,10 @@ def render_combobox_right_answer(answer,feedback, frame, combobox, label, checkb
     checkbutton.pack_forget()
     button.pack()
 
-def combobox_wrong_answer(answer,feedback, label):
+def render_combobox_wrong_answer(answer,feedback, label):
     label.config(text=feedback[answer], fg="blue")
 
-def forget(widget):
-        widget.pack_forget()
-    
-def entry_right_answer(answer, right_answer, feedback, label, frame, checkbutton, button, combobox):
+def entry_right_answer(answer, feedback, label, frame, checkbutton, button):
     label.config(text=feedback[answer], fg="green", font=("Arial", 12))
     textfield = tk.Text(
     master=frame,
@@ -151,6 +161,8 @@ def entry_right_answer(answer, right_answer, feedback, label, frame, checkbutton
 def entry_wrong_answer(label):
     label.config(text="Yritä uudestaan!", fg="blue")
 
+"""
+
 def check_button(frame):
     if result == True:
         render_combobox_right_answer()
@@ -168,3 +180,5 @@ def check_button(frame):
     )
 
     check_assumption_answer.pack(pady=5)
+
+"""
