@@ -1,0 +1,21 @@
+mieti toimintoja uudelleen
+    - onko jotain turhaa?
+    - voiko tehdä yksinkertaisemmin tai paremmin?
+
+tietoboksit eri näköisiksi kuin todistusosio
+
+windows & mac toimivuudet
+
+halutaanko hyödyntää poetryä ohjelman suorituksessa? nyt se ei ehkä ole mukana
+
+pitää asentaa pyinstaller ennen setuppia?
+
+voi olla, että asennettu omalle koneelle mutta ei virtuaaliympäristössä
+
+näyttö on liian alhaalla
+
+osa tekstistä menee taas piiloo
+
+vanha src piiloon gitistä ja uusi tilalle
+
+jos teksti jää niin laita isännäksi screen

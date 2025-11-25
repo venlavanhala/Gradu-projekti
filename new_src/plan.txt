@@ -1,9 +1,0 @@
-Suunnitelma
------------
-
-ui:ssa kaikki frameihin liittyvät funktiot
-
-omissa frameissa vaan funktio joka luo framen ja painettaessa kutsuu ui 
-funktiota
-
-jos teksti jää niin laita isännäksi screen

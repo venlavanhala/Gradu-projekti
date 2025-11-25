@@ -4,6 +4,8 @@ import textfields
 from activity import *
 from change_layout import *
 
+# ei tarvi luokkaa
+
 class UI:
     def __init__(self, root):
         self._root = root
