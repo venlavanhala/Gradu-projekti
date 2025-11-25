@@ -13,7 +13,7 @@ import logic
 def statement_view(screen):
 
     # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
-    format_textfield(screen, textfields.oletusjatko)
+    statement_texts(screen)
 
     frame = new_frame(screen)
 

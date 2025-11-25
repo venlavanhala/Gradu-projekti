@@ -1,3 +1,5 @@
+Nyt uusin toimiva versio frame_to_object branchissa
+
 mieti toimintoja uudelleen
     - onko jotain turhaa?
     - voiko tehdä yksinkertaisemmin tai paremmin?

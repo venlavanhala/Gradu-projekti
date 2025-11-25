@@ -5,14 +5,14 @@ import tkinter as tk
 from tkinter import ttk
 import textfields
 from interface.edit_ui import *
-from interface.ui_handler import show_end, hide_frame, handle_formatting_check
+from interface.ui_handler import show_end, hide_frame, handle_formatting_check, formatting_texts
 import logic
 
 
 def formatting_view(screen):
 
     # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
-    format_textfield(screen, textfields.osoitusjatko)
+    formatting_texts(screen)
 
     frame = new_frame(screen)
 

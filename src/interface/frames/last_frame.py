@@ -11,14 +11,8 @@ from interface.ui_handler import *
 
 def end_view(screen):
 
-    format_textfield(screen, textfields.lopputeksti)
+    end_texts(screen)
 
     frame = new_frame(screen)
-
-    proof_button = ttk.Button(frame, text="Näytä todistus", command=lambda: (
-    show_formatting()  
-    ))
-
-
 
     return frame

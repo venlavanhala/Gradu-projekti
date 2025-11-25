@@ -14,17 +14,9 @@ def assumption_view(screen):
     label = ttk.Label(screen, text="Harjoittele todistamista", font=("Georgia", 16, "bold"))
     label.pack(pady=(5,5))
 
-    # ensimmäisten tekstikenttien sisällöt
-    textfields_list = [
-        textfields.johdanto,
-        textfields.tehtavananto,
-        textfields.alkuteksti,
-        textfields.vaite_muotoilu
-    ]
-
     # luodaan tekstikentät ja lisätään niihin tekstit
-    for text in textfields_list:
-        format_textfield(screen, text)
+
+    starting_texts(screen)
 
     # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
     frame = new_frame(screen)

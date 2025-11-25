@@ -5,14 +5,14 @@ import tkinter as tk
 from tkinter import ttk
 import textfields
 from interface.edit_ui import *
-from interface.ui_handler import show_evidence, hide_frame, handle_pairless_check
+from interface.ui_handler import show_evidence, hide_frame, handle_pairless_check, pairless_texts
 import logic
 
 
 def pairless_view(screen):
 
     # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
-    format_textfield(screen, textfields.vaitejatko)
+    pairless_texts(screen)
 
     frame = new_frame(screen)
 

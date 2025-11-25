@@ -60,12 +60,12 @@ def format_textfield_size(textfield):
 # korkeus = \n määrä + pisin/12
 
 # muotoilee tekstikentän ja lisää tekstin
-def format_textfield(screen, text, backround_color="black"):
+def format_textfield(screen, text, color="black"):
     textfield = tk.Text(
         master=screen,
         wrap="word",
         bg="white",
-        fg=backround_color,
+        fg=color,
         relief="flat",
         borderwidth=0,
         highlightthickness=0
@@ -147,7 +147,7 @@ def popup_window(screen, text):
     tk.Button(popup, text="Sulje", command=popup.destroy).pack(pady=5)
 
 # oikea vastaus 
-def render_combobox_right_answer(answer,feedback, screen, combobox, label, checkbutton, button):
+def render_combobox_right_answer(answer,feedback, screen, combobox, label):
     label.config(text=feedback[answer], fg="green", font=("Arial", 12))
     textfield = tk.Text(
     master=screen,
@@ -220,7 +220,10 @@ def format_right_answer(label, screen):
     borderwidth=0,
     highlightthickness=0
     )
-    textfield.insert("1.0", textfields.kirjoitusteksti)
+    if textfields.valittu == "2k+1":
+        textfield.insert("1.0", textfields.kirjoitusteksti)
+    else:
+        textfield.insert("1.0", textfields.kirjoitusteksti_)
     format_textfield_size(textfield)
     textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
 

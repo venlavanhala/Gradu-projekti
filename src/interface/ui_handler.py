@@ -76,6 +76,7 @@ def handle_combobox_check(answer, right_answer, feedback, screen, combobox, feed
     else:
         render_combobox_wrong_answer(answer, feedback, feedback_label)
 
+
 def handle_formatting_check(answers, feedback_label, screen, checkbutton, continue_button):
     answer_list = [int(answer.get()) for answer in answers]
     result = logic.check_entries(answer_list, textfields.kirjoitusvastaus)
@@ -85,3 +86,46 @@ def handle_formatting_check(answers, feedback_label, screen, checkbutton, contin
     else:
         format_wrong_answer(result, feedback_label)
     
+def starting_texts(screen):
+    format_textfield(screen, textfields.johdanto)
+    format_textfield(screen, textfields.tehtavananto)
+    format_textfield(screen, textfields.alkusuunnitelma)
+    format_textfield(screen, textfields.alkuteksti, "#4B0082")
+    format_textfield(screen, textfields.oletuskysymys)
+
+def statement_texts(screen):
+    format_textfield(screen, textfields.oletusjatko, "#4B0082")
+    format_textfield(screen, textfields.vaitekysymys)
+
+
+def pairless_texts(screen):
+    format_textfield(screen, textfields.vaitejatko, "#4B0082")
+    format_textfield(screen, textfields.paritontieto)
+    format_textfield(screen, textfields.paritonkysymys, "#4B0082")
+    format_textfield(screen, textfields.paritontieto2)
+
+def evidence_texts(screen):
+    if textfields.valittu == "2k+1":
+        format_textfield(screen, textfields.paritonjatko, "#4B0082")
+        format_textfield(screen, textfields.maarittely)
+        format_textfield(screen, textfields.tulo, "#4B0082")
+        format_textfield(screen, textfields.tulosievennys)
+        format_textfield(screen, textfields.tulo2, "#4B0082")
+    else:
+        format_textfield(screen, textfields.paritonjatko_, "#4B0082")
+        format_textfield(screen, textfields.maarittely_)
+        format_textfield(screen, textfields.tulo_, "#4B0082")
+        format_textfield(screen, textfields.tulosievennys_)
+        format_textfield(screen, textfields.tulo2_, "#4B0082")
+
+def formatting_texts(screen):
+    if textfields.valittu == "2k+1":
+        format_textfield(screen, textfields.osoitusjatko, "#4B0082")
+    else:
+        format_textfield(screen, textfields.osoitusjatko_, "#4B0082")
+
+def end_texts(screen):
+    if textfields.valittu == "2k+1":
+        format_textfield(screen, textfields.lopputeksti, "#4B0082")
+    else:
+        format_textfield(screen, textfields.lopputeksti_, "#4B0082")

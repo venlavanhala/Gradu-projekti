@@ -5,20 +5,29 @@ import tkinter as tk
 from tkinter import ttk
 import textfields
 from interface.edit_ui import *
-from interface.ui_handler import hide_frame, show_formatting, handle_combobox_check
+from interface.ui_handler import show_formatting, handle_combobox_check, evidence_texts
 import logic
 
 
 def evidence_view(screen):
 
     # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
-    format_textfield(screen, textfields.paritonjatko)
+    evidence_texts(screen)
 
     frame = new_frame(screen)
 
     # monivalintakysymys
 
-    choose_proof_method = new_combobox(frame, textfields.osoitusvaihtoehdot)
+    valittu = textfields.valittu
+
+    if valittu == "2k+1":
+      choose_proof_method = new_combobox(frame, textfields.osoitusvaihtoehdot)
+      osoitusvastaus = textfields.osoitusvastaus
+      osoituspalautteet = textfields.osoituspalautteet
+    else:
+      choose_proof_method = new_combobox(frame, textfields.osoitusvaihtoehdot_)
+      osoitusvastaus = textfields.osoitusvastaus_
+      osoituspalautteet = textfields.osoituspalautteet_
 
     feedback_label = new_label(frame)
 
@@ -30,8 +39,8 @@ def evidence_view(screen):
     frame,
     text="Tarkista",
     command=lambda: (
-        handle_combobox_check(choose_proof_method.get(), textfields.osoitusvastaus,
-                              textfields.osoituspalautteet, screen, choose_proof_method,
+        handle_combobox_check(choose_proof_method.get(), osoitusvastaus,
+                              osoituspalautteet, screen, choose_proof_method,
                               feedback_label, check_answer, continue_button)
     ))
     check_answer.pack(pady=5)
