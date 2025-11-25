@@ -6,8 +6,8 @@ from tkinter import ttk
 import textfields
 from interface.edit_ui import *
 import logic
-from interface.statement import *
-from interface.ui import *
+from interface.frames.statement import *
+from interface.ui_handler import *
 
 def assumption_view(screen):
 
@@ -38,23 +38,13 @@ def assumption_view(screen):
         show_statement()
     ))
 
-    # nappi, jota painamalla tulee result ja UI puoli
-
-    def handle_combobox_check():
-        answer = choose_assumption.get()
-        result = logic.check_combobox(answer, textfields.oletusvastaus)
-        if result == True:
-            render_combobox_right_answer(answer, textfields.oletukset,
-                                         screen, choose_assumption, feedback_label,
-                                         check_assumption_answer, continue_button)
-        else:
-            render_combobox_wrong_answer(answer, textfields.oletukset, feedback_label)
-
     check_assumption_answer = ttk.Button(
     frame,
     text="Tarkista",
     command=lambda: (
-        handle_combobox_check()
+        handle_combobox_check(choose_assumption.get(), textfields.oletusvastaus, 
+                            textfields.oletukset, screen, choose_assumption,
+                            feedback_label, check_assumption_answer, continue_button)
     ))
     check_assumption_answer.pack(pady=5)
 

@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import ttk
 import textfields
 from interface.edit_ui import *
-from interface.ui import show_evidence, hide_frame
+from interface.ui_handler import show_evidence, hide_frame, handle_pairless_check
 import logic
 
 
@@ -20,7 +20,7 @@ def pairless_view(screen):
 
     excercise_frame = new_frame(frame)
 
-    choose_statement = new_entry(excercise_frame, "a=", " (k \u2208 \u2124)")
+    write_formatting = new_entry(excercise_frame, "a=", " (k \u2208 \u2124)")
 
     feedback_label = new_label(frame)
 
@@ -31,24 +31,20 @@ def pairless_view(screen):
       show_evidence()  
     ))
 
-    # nappi, jota painamalla tulee result ja UI puoli
-
-    def handle_entry_check():
-        answer = choose_statement.get()
-        result = logic.check_entry(answer, textfields.pariton_oikeat)
-        if result == True:
-            entry_right_answer(answer,
-            textfields.pariton_vaihtoehdot, feedback_label, frame,
-            check_answer, continue_button)
-        else:
-            entry_wrong_answer(feedback_label)
-
     check_answer = ttk.Button(
     frame,
     text="Tarkista",
     command=lambda: (
-        handle_entry_check()
+        handle_pairless_check(write_formatting.get(), feedback_label, screen, check_answer, continue_button)
     ))
     check_answer.pack(pady=5)
+
+    tip_pairless = ttk.Button(frame, text="Vihje", command=lambda: (
+        popup_window(frame, textfields.pariton_vihje1),
+        tip_2_pairless.pack(pady=(5, 10))))
+    
+    tip_pairless.pack(pady=(5, 5))
+
+    tip_2_pairless = ttk.Button(frame, text="Vihje 2", command=lambda: popup_window(frame, textfields.pariton_vihje2))
 
     return frame
