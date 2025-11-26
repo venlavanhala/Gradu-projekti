@@ -40,4 +40,5 @@ def assumption_view(screen):
     ))
     check_assumption_answer.pack(pady=5)
 
+
     return frame

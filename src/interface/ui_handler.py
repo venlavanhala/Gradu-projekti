@@ -57,12 +57,11 @@ def hide_frame(frame):
     frame.destroy()
 
 def handle_pairless_check(answer, feedback_label, screen, checkbutton, continue_button):
-    answer = answer.replace(" ","").lower()
+    answer = answer.replace(" ","").replace("*", "").lower()
     result = logic.check_entry(answer, textfields.pariton_oikeat)
     if result == True:
         format_pairless_answer(answer,
-        textfields.pariton_vaihtoehdot, feedback_label, screen)
-        check_to_continue_button(checkbutton, continue_button)
+        textfields.pariton_vaihtoehdot, feedback_label, screen, checkbutton, continue_button)
         textfields.valittu = answer
     else:
         entry_wrong_answer(feedback_label)
@@ -71,61 +70,65 @@ def handle_combobox_check(answer, right_answer, feedback, screen, combobox, feed
     result = logic.check_combobox(answer, right_answer)
     if result == True:
         render_combobox_right_answer(answer, feedback,
-                                    screen, combobox, feedback_label)
-        check_to_continue_button(checkbutton, continue_button)
+                                    screen, combobox, feedback_label, checkbutton, continue_button)
     else:
         render_combobox_wrong_answer(answer, feedback, feedback_label)
-
+ 
 
 def handle_formatting_check(answers, feedback_label, screen, checkbutton, continue_button):
     answer_list = [int(answer.get()) for answer in answers]
     result = logic.check_entries(answer_list, textfields.kirjoitusvastaus)
     if result == True:
-        format_right_answer(feedback_label, screen)
-        check_to_continue_button(checkbutton, continue_button)
+        format_right_answer(feedback_label, screen, checkbutton, continue_button)
     else:
         format_wrong_answer(result, feedback_label)
     
 def starting_texts(screen):
+    format_textfield(screen, "[Vaihe 1]", "#6a0dad")
     format_textfield(screen, textfields.johdanto)
     format_textfield(screen, textfields.tehtavananto)
     format_textfield(screen, textfields.alkusuunnitelma)
-    format_textfield(screen, textfields.alkuteksti, "#4B0082")
+    format_textfield(screen, textfields.alkuteksti, "#9c29c1")
     format_textfield(screen, textfields.oletuskysymys)
 
 def statement_texts(screen):
-    format_textfield(screen, textfields.oletusjatko, "#4B0082")
+    format_textfield(screen, "[Vaihe 2]", "6a0dad")
+    format_textfield(screen, textfields.oletusjatko, "#9c29c1")
     format_textfield(screen, textfields.vaitekysymys)
 
 
 def pairless_texts(screen):
-    format_textfield(screen, textfields.vaitejatko, "#4B0082")
+    format_textfield(screen, "\n[Vaihe 3]\n", "6a0dad")
+    format_textfield(screen, textfields.vaitejatko, "#9c29c1")
     format_textfield(screen, textfields.paritontieto)
-    format_textfield(screen, textfields.paritonkysymys, "#4B0082")
+    format_textfield(screen, textfields.paritonkysymys, "#9c29c1")
     format_textfield(screen, textfields.paritontieto2)
 
 def evidence_texts(screen):
+    format_textfield(screen, "\n[Vaihe 4]\n", "6a0dad")
     if textfields.valittu == "2k+1":
-        format_textfield(screen, textfields.paritonjatko, "#4B0082")
+        format_textfield(screen, textfields.paritonjatko, "#9c29c1")
         format_textfield(screen, textfields.maarittely)
-        format_textfield(screen, textfields.tulo, "#4B0082")
+        format_textfield(screen, textfields.tulo, "#9c29c1")
         format_textfield(screen, textfields.tulosievennys)
-        format_textfield(screen, textfields.tulo2, "#4B0082")
+        format_textfield(screen, textfields.tulo2, "#9c29c1")
     else:
-        format_textfield(screen, textfields.paritonjatko_, "#4B0082")
+        format_textfield(screen, textfields.paritonjatko_, "#9c29c1")
         format_textfield(screen, textfields.maarittely_)
-        format_textfield(screen, textfields.tulo_, "#4B0082")
+        format_textfield(screen, textfields.tulo_, "#9c29c1")
         format_textfield(screen, textfields.tulosievennys_)
-        format_textfield(screen, textfields.tulo2_, "#4B0082")
+        format_textfield(screen, textfields.tulo2_, "#9c29c1")
 
 def formatting_texts(screen):
+    format_textfield(screen, "[Vaihe 5]\n", "6a0dad")
     if textfields.valittu == "2k+1":
-        format_textfield(screen, textfields.osoitusjatko, "#4B0082")
+        format_textfield(screen, textfields.osoitusjatko, "#9c29c1")
     else:
-        format_textfield(screen, textfields.osoitusjatko_, "#4B0082")
+        format_textfield(screen, textfields.osoitusjatko_, "#9c29c1")
 
 def end_texts(screen):
+    format_textfield(screen, "[Vaihe 6]", "violet")
     if textfields.valittu == "2k+1":
-        format_textfield(screen, textfields.lopputeksti, "#4B0082")
+        format_textfield(screen, textfields.lopputeksti, "#9c29c1")
     else:
-        format_textfield(screen, textfields.lopputeksti_, "#4B0082")
+        format_textfield(screen, textfields.lopputeksti_, "#9c29c1")

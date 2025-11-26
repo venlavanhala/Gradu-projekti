@@ -50,12 +50,13 @@ def scrollable_screen(root):
 
 # muotoilee tekstikentän muodon ja koon
 def format_textfield_size(textfield):
+    textfield.config(font=("Georgia", 12))
     text = textfield.get("1.0", "end-1c")
     lines = text.split('\n')
     lines = [len(line) for line in lines]
     height = text.count("\n\n")+max(lines)/60+len(lines) # tyhjät rivit + rivit + pisin rivi/leveys
+    textfield.config(height=height, width=60, wrap="word", state=tk.DISABLED)
     # lasketaan näkyvien rivien määrä
-    textfield.config(height=height, width=60, wrap="word", state=tk.DISABLED,font=("Georgia", 12))
 
 # korkeus = \n määrä + pisin/12
 
@@ -71,6 +72,7 @@ def format_textfield(screen, text, color="black"):
         highlightthickness=0
     )
     textfield.insert("1.0", text)
+    textfield.config(font=("Georgia", 12))
     format_textfield_size(textfield)
     textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5))
 
@@ -147,8 +149,8 @@ def popup_window(screen, text):
     tk.Button(popup, text="Sulje", command=popup.destroy).pack(pady=5)
 
 # oikea vastaus 
-def render_combobox_right_answer(answer,feedback, screen, combobox, label):
-    label.config(text=feedback[answer], fg="green", font=("Arial", 12))
+def render_combobox_right_answer(answer,feedback, screen, combobox, label, checkbutton, continue_button):
+    label.config(text=feedback[answer], fg="green", font=("Georgia", 12))
     textfield = tk.Text(
     master=screen,
     font=("Arial", 12),
@@ -160,14 +162,17 @@ def render_combobox_right_answer(answer,feedback, screen, combobox, label):
     )
     textfield.insert("1.0", answer)
     format_textfield_size(textfield)
-    textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
+    textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5))
+    checkbutton.pack_forget()
+    continue_button.pack()
     combobox.configure(state="disabled")
+    return textfield
 
 def render_combobox_wrong_answer(answer,feedback, label):
     label.config(text=feedback[answer], fg="blue")
 
-def format_pairless_answer(answer, feedback, label, screen):
-    label.config(text=feedback[answer], fg="green", font=("Arial", 12))
+def format_pairless_answer(answer, feedback, label, screen, checkbutton, continue_button):
+    label.config(text=feedback[answer], fg="green", font=("Georgia", 12))
     textfield = tk.Text(
     master=screen,
     font=("Arial", 12),
@@ -180,9 +185,11 @@ def format_pairless_answer(answer, feedback, label, screen):
     textfield.insert("1.0", "a="+answer+"  (k \u2208 \u2124)")
     format_textfield_size(textfield)
     textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
+    checkbutton.pack_forget()
+    continue_button.pack()
 
 def entry_right_answer(answer, feedback, label, frame):
-    label.config(text=feedback[answer], fg="green", font=("Arial", 12))
+    label.config(text=feedback[answer], fg="green", font=("Georgia", 12))
     textfield = tk.Text(
     master=frame,
     font=("Arial", 12),
@@ -202,15 +209,15 @@ def entry_wrong_answer(label):
 
 def format_wrong_answer(result, feedback_label):
     if result[0]==False:
-        feedback_label.config(text=textfields.kirjoituspalautteet[0], fg="blue", font=("Arial", 12))
+        feedback_label.config(text=textfields.kirjoituspalautteet[0], fg="blue", font=("Georgia", 12))
     if result[1]==False:
-        feedback_label.config(text=textfields.kirjoituspalautteet[1], fg="blue", font=("Arial", 12))
+        feedback_label.config(text=textfields.kirjoituspalautteet[1], fg="blue", font=("Georgia", 12))
     if result[2]==False:
-        feedback_label.config(text=textfields.kirjoituspalautteet[2], fg="blue", font=("Arial", 12))
+        feedback_label.config(text=textfields.kirjoituspalautteet[2], fg="blue", font=("Georgia", 12))
 
 
-def format_right_answer(label, screen):
-    label.config(text="Oikein!", fg="green", font=("Arial", 12))
+def format_right_answer(label, screen, checkbutton, continue_button):
+    label.config(text="Oikein!", fg="green", font=("Georgia", 12))
     textfield = tk.Text(
     master=screen,
     font=("Arial", 12),
@@ -226,7 +233,5 @@ def format_right_answer(label, screen):
         textfield.insert("1.0", textfields.kirjoitusteksti_)
     format_textfield_size(textfield)
     textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
-
-def check_to_continue_button(checkbutton, continue_button):
     checkbutton.pack_forget()
     continue_button.pack()

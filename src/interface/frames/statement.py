@@ -7,16 +7,15 @@ import textfields
 from interface.edit_ui import *
 from interface.frames.pairless_frame import *
 from interface.ui_handler import *
-import logic
 
 
 def statement_view(screen):
 
-    # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
+
     statement_texts(screen)
 
+    # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
     frame = new_frame(screen)
-
 
     # monivalintakysymys
     choose_statement = new_combobox(frame, textfields.vaitevaihtoehdot)

@@ -36,9 +36,9 @@ vaitevaihtoehdot = [
     "lukujen a ja b tulo on pariton luku"
 ]
 
-vaitteet = {"a \u00B7 b on pariton kokonaisluku":"Juuri näin!",
+vaitteet = {"a \u00B7 b on pariton kokonaisluku":"Oikein!",
     "a \u00B7 b on kokonaisluku":"a\u00B7 b on kokonaisluku, mutta mitä muuta haluamme todistaa?",
-    "lukujen a ja b tulo on pariton luku":"Juuri näin!"}
+    "lukujen a ja b tulo on pariton luku":"Oikein! Pariton luku on aina myös kokonaisluku."}
 
 vaitevastaus = ["a \u00B7 b on pariton kokonaisluku", "lukujen a ja b tulo on pariton luku"]
 
@@ -47,7 +47,7 @@ vaitejatko += "Voimme siis merkitä: a, b \u2208 \u2124."
 
 paritontieto = "Parilliset luvut voidaan ilmaista muodossa a=2k (k \u2208 \u2124), koska parilliset luvut ovat aina jaollisia luvulla 2."
 
-paritonkysymys = "Miten parittomat luvut voitaisiin ilmaista tämän tyyppisesti kokonaisluvun k avulla?\nKirjoita tekstikenttään, miten pariton luku a voitaisiin ilmaista. Kirjoita vastaus muodossa a=[lauseke]\n."
+paritonkysymys = "Miten parittomat luvut voitaisiin ilmaista tämän tyyppisesti kokonaisluvun k avulla?\nKirjoita tekstikenttään, miten pariton luku a voitaisiin ilmaista. Kirjoita vastaus muodossa a=[lauseke].\n"
 
 paritontieto2 = "Parittomat luvut voidaan ilmaista muodossa:"
 
@@ -66,7 +66,7 @@ valittu = ""
 
 paritonjatko = "Nyt meillä on yksi muuttuja, joka ilmaisee paritonta lukua. Tarvitsemme vielä toisen parittoman luvun. Käytämme siihen eri muuttujia, koska parittomat luvut eivät välttämättä ole samoja. "
 
-maarittely = "Määritellään b = 2n + 1}, kun n \u2208 \u2124.\n"
+maarittely = "Määritellään b = 2n + 1, kun n \u2208 \u2124.\n"
 
 tulo ="Voimme nyt kirjoittaa tulon lukujen a ja b avulla. Kirjoitamme tulon, jotta voimme tutkia sen parittomuutta.\n"
 
@@ -84,7 +84,7 @@ osoitusvastaus = ["Osoitetaan, että 4kn + 2k + 2n + 1 ei ole jaollinen kahdella
 
 osoituspalautteet = {"Osoitamme, että 4kn + 2k + 2n + 1 on jaollinen jollain muulla luvulla kuin 2":"Tämä ei osoita sitä, että 4kn+2k+2n+1 olisi pariton luku.\nJos 4kn+2k+2n+1 olisi jaollinen esimerkiksi luvulla 5,\nse voisi olla samalla myös jaollinen luvulla 2.",
                     "Osoitetaan, että 4kn + 2k + 2n + 1 ei ole jaollinen kahdella":"Oikein! Tällöin a \u00B7 b voidaan kirjoittaa muodossa 2p+1, jossa p \u2208 \u2124.",
-                    "Osoitetaan, että a \u00B7 b voidaan kirjoittaa muodossa 2p + 1, jossa p \u2208 \u2124":"Kyllä!"}
+                    "Osoitetaan, että a \u00B7 b voidaan kirjoittaa muodossa 2p + 1, jossa p \u2208 \u2124":"Kyllä! Tällöin a \u00B7 b ei ole jaollinen kahdella."}
 
 osoitusjatko ="Kirjoita 4kn + 2k + 2n + 1 muodossa 2 \u00B7 p + 1, kun p \u2208 \u2124."
 
@@ -96,7 +96,7 @@ kirjoituspalautteet = ["Ensimmäisen kentän vastaus on väärin.", "Toisen kent
 
 kirjoitusteksti = "4kn + 2k + 2n + 1 = 2 \u00B7 (2kn + 1k + 1n) + 1"
 
-lopputeksti= "Parittomat kokonaisluvut pystytään aina kirjoittamaan muodossa 2p + 1, kun \u2208 \u2124. Koska saimme kirjoitettua luvun a kun \u00B7 b muodossa 2p + 1, "
+lopputeksti= "Parittomat kokonaisluvut pystytään aina kirjoittamaan muodossa 2p + 1, kun \u2208 \u2124. Koska saimme kirjoitettua luvun a \u00B7 b muodossa 2p + 1, "
 lopputeksti += "sekin on kokonaisluku.\n\nLähdimme siis oletuksesta, että on kaksi paritonta kokonaislukua, ja päädyimme siihen, että niiden tulo on myös pariton. "
 lopputeksti += "Väite on täten todistettu.\n\n\u25A1"
 
@@ -125,7 +125,7 @@ osoitusvastaus_ = ["Osoitetaan, että 4kn - 2k - 2n + 1 ei ole jaollinen kahdell
 
 osoituspalautteet_ = {"Osoitamme, että 4kn - 2k - 2n + 1 on jaollinen jollain muulla luvulla kuin 2":"Tämä ei osoita sitä, että 4kn-2k-2n+1 olisi pariton luku.\nJos 4kn-2k-2n+1 olisi jaollinen esimerkiksi luvulla 5,\nse voisi olla samalla myös jaollinen luvulla 2.",
                     "Osoitetaan, että 4kn - 2k - 2n + 1 ei ole jaollinen kahdella":"Oikein! Tällöin a \u00B7 b voidaan kirjoittaa muodossa 2p+1, jossa p \u2208 \u2124.",
-                    "Osoitetaan, että a \u00B7 b voidaan kirjoittaa muodossa 2p - 1, jossa p \u2208 \u2124":"Kyllä!"}
+                    "Osoitetaan, että a \u00B7 b voidaan kirjoittaa muodossa 2p - 1, jossa p \u2208 \u2124":"Kyllä! Tällöin a \u00B7 b ei ole jaollinen kahdella."}
 
 osoitusjatko_ ="Kirjoita 4kn - 2k - 2n + 1 muodossa 2 \u00B7 p - 1, kun p \u2208 \u2124."
 
@@ -137,6 +137,6 @@ kirjoituspalautteet_ = ["Ensimmäisen kentän vastaus on väärin.", "Toisen ken
 
 kirjoitusteksti_ = "4kn - 2k - 2n + 1 = 2 \u00B7 (2kn - 1k - 1n) + 1"
 
-lopputeksti_ = "Parittomat kokonaisluvut pystytään aina kirjoittamaan muodossa 2p - 1, kun \u2208 \u2124. Koska saimme kirjoitettua luvun a kun \u00B7 b muodossa 2p - 1, "
+lopputeksti_ = "Parittomat kokonaisluvut pystytään aina kirjoittamaan muodossa 2p - 1, kun \u2208 \u2124. Koska saimme kirjoitettua luvun a \u00B7 b muodossa 2p - 1, "
 lopputeksti_ += "sekin on kokonaisluku.\n\nLähdimme siis oletuksesta, että on kaksi paritonta kokonaislukua, ja päädyimme siihen, että niiden tulo on myös pariton. "
 lopputeksti_ += "Väite on täten todistettu.\n\n\u25A1"

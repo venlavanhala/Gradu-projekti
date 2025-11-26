@@ -6,7 +6,6 @@ from tkinter import ttk
 import textfields
 from interface.edit_ui import *
 from interface.ui_handler import show_end, hide_frame, handle_formatting_check, formatting_texts
-import logic
 
 
 def formatting_view(screen):
