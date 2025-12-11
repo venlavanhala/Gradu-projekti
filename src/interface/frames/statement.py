@@ -24,8 +24,9 @@ def statement_view(screen):
 
     # VAIHDA SEURAAVAAN
 
-    continue_button = ttk.Button(frame, text="Jatka", command=lambda:(
-        show_pairless()
+    continue_button = ttk.Button(screen, text="Jatka", command=lambda:(
+        show_pairless(),
+        hide_button(continue_button)
     ))
 
 

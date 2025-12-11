@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import ttk
 import textfields
 from interface.edit_ui import *
-from interface.ui_handler import show_formatting, handle_combobox_check, evidence_texts
+from interface.ui_handler import *
 import logic
 
 
@@ -20,6 +20,7 @@ def evidence_view(screen):
 
     valittu = textfields.valittu
 
+    # tämä määritys muualle
     if valittu == "2k+1":
       choose_proof_method = new_combobox(frame, textfields.osoitusvaihtoehdot)
       osoitusvastaus = textfields.osoitusvastaus
@@ -31,8 +32,9 @@ def evidence_view(screen):
 
     feedback_label = new_label(frame)
 
-    continue_button = ttk.Button(frame, text="Jatka", command=lambda: (
-      show_formatting()  
+    continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
+      show_formatting(),
+      hide_button(continue_button)
     ))
 
     check_answer = ttk.Button(

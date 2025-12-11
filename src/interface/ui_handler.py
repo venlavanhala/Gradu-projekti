@@ -56,6 +56,9 @@ def show_end():
 def hide_frame(frame):
     frame.destroy()
 
+def hide_button(button):
+    button.pack_forget()
+
 def handle_pairless_check(answer, feedback_label, screen, checkbutton, continue_button):
     answer = answer.replace(" ","").replace("*", "").lower()
     result = logic.check_entry(answer, textfields.pariton_oikeat)
@@ -92,20 +95,20 @@ def starting_texts(screen):
     format_textfield(screen, textfields.oletuskysymys)
 
 def statement_texts(screen):
-    format_textfield(screen, "[Vaihe 2]", "6a0dad")
+    format_textfield(screen, "[Vaihe 2]", "#6a0dad")
     format_textfield(screen, textfields.oletusjatko, "#9c29c1")
     format_textfield(screen, textfields.vaitekysymys)
 
 
 def pairless_texts(screen):
-    format_textfield(screen, "\n[Vaihe 3]\n", "6a0dad")
+    format_textfield(screen, "\n[Vaihe 3]\n", "#6a0dad")
     format_textfield(screen, textfields.vaitejatko, "#9c29c1")
     format_textfield(screen, textfields.paritontieto)
     format_textfield(screen, textfields.paritonkysymys, "#9c29c1")
     format_textfield(screen, textfields.paritontieto2)
 
 def evidence_texts(screen):
-    format_textfield(screen, "\n[Vaihe 4]\n", "6a0dad")
+    format_textfield(screen, "\n[Vaihe 4]\n", "#6a0dad")
     if textfields.valittu == "2k+1":
         format_textfield(screen, textfields.paritonjatko, "#9c29c1")
         format_textfield(screen, textfields.maarittely)
@@ -120,14 +123,14 @@ def evidence_texts(screen):
         format_textfield(screen, textfields.tulo2_, "#9c29c1")
 
 def formatting_texts(screen):
-    format_textfield(screen, "[Vaihe 5]\n", "6a0dad")
+    format_textfield(screen, "[Vaihe 5]\n", "#6a0dad")
     if textfields.valittu == "2k+1":
         format_textfield(screen, textfields.osoitusjatko, "#9c29c1")
     else:
         format_textfield(screen, textfields.osoitusjatko_, "#9c29c1")
 
 def end_texts(screen):
-    format_textfield(screen, "[Vaihe 6]", "violet")
+    format_textfield(screen, "[Vaihe 5]\n", "#6a0dad")
     if textfields.valittu == "2k+1":
         format_textfield(screen, textfields.lopputeksti, "#9c29c1")
     else:

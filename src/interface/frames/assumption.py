@@ -26,8 +26,9 @@ def assumption_view(screen):
 
     feedback_label = new_label(frame)
 
-    continue_button = ttk.Button(frame, text="Jatka", command=lambda: (
-        show_statement()
+    continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
+        show_statement(),
+        hide_button(continue_button)
     ))
 
     check_assumption_answer = ttk.Button(

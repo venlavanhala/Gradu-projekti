@@ -8,6 +8,7 @@ def main():
     screen = ui_handler.create_window(root)
     # ensimmäinen näkymä
     ui_handler.init(screen)
+    
     ui_handler.start_assumption()
 
     root.mainloop()

@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import ttk
 import textfields
 from interface.edit_ui import *
-from interface.ui_handler import show_evidence, hide_frame, handle_pairless_check, pairless_texts
+from interface.ui_handler import *
 import logic
 
 
@@ -26,9 +26,10 @@ def pairless_view(screen):
 
     # VAIHDA SEURAAVAAN
 
-    continue_button = ttk.Button(frame, text="Jatka", command=lambda: (
+    continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
       hide_frame(excercise_frame),
-      show_evidence()  
+      show_evidence(),
+      hide_button(continue_button)
     ))
 
     check_answer = ttk.Button(

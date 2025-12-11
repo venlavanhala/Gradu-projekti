@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import ttk
 import textfields
 from interface.edit_ui import *
-from interface.ui_handler import show_end, hide_frame, handle_formatting_check, formatting_texts
+from interface.ui_handler import *
 
 
 def formatting_view(screen):
@@ -25,9 +25,10 @@ def formatting_view(screen):
 
     # VAIHDA SEURAAVA FRAME
 
-    continue_button = ttk.Button(frame, text="Jatka", command=lambda: (
+    continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
       hide_frame(excercise_frame),
-      show_end()
+      show_end(),
+      hide_button(continue_button)
     ))
 
     check_answer = ttk.Button(
