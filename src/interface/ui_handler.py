@@ -53,6 +53,10 @@ def show_end():
     from interface.frames.last_frame import end_view
     switch_to(end_view)
 
+def create_spacer():
+    spacer = tk.Frame(root, height=50, bg="white")   # 50px tyhjää tilaa
+    spacer.pack(side="bottom", fill="x")
+
 def hide_frame(frame):
     frame.destroy()
 

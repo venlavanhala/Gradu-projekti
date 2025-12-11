@@ -11,6 +11,9 @@ from interface.ui_handler import *
 
 def assumption_view(screen):
 
+    # luodaan tyhjä alapalkki
+    create_spacer()
+
     label = ttk.Label(screen, text="Harjoittele todistamista", font=("Georgia", 16, "bold"))
     label.pack(pady=(5,5))
 

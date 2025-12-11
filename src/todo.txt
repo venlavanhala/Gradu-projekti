@@ -16,8 +16,6 @@ voi olla, että asennettu omalle koneelle mutta ei virtuaaliympäristössä
 
 näyttö on liian alhaalla
 
-osa tekstistä menee taas piiloo
-
-vanha src piiloon gitistä ja uusi tilalle
+osa tekstistä menee taas piiloon
 
 jos teksti jää niin laita isännäksi screen
