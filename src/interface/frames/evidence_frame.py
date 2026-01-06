@@ -12,6 +12,7 @@ from create_texts import evidence_texts
 def evidence_view(screen):
 
     # luo tekstit
+    phase = bold_phase_text(screen, "4")
     evidence_texts(screen)
 
     # luo framen tehtävälle
@@ -35,7 +36,8 @@ def evidence_view(screen):
     # jatka seuraavaan näkymään
     continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
       show_formatting(),
-      hide_button(continue_button)
+      hide_button(continue_button),
+      remove_bolding(phase)
     ))
 
     # tarkista vastaus

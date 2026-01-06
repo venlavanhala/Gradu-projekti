@@ -12,6 +12,7 @@ from create_texts import pairless_texts
 def pairless_view(screen):
 
     # luo tekstit
+    phase = bold_phase_text(screen, "3")
     pairless_texts(screen)
 
     # luodaan frame tehtäväkentälle, joka piilotetaan myöhemmin näkyvistä
@@ -29,7 +30,8 @@ def pairless_view(screen):
     continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
       hide_frame(excercise_frame),
       show_evidence(),
-      hide_button(continue_button)
+      hide_button(continue_button),
+      remove_bolding(phase)
     ))
 
     # tarkistaa vastauksen

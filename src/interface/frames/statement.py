@@ -12,6 +12,7 @@ from create_texts import statement_texts
 def statement_view(screen):
 
     # luo tekstit
+    phase = bold_phase_text(screen, "2")
     statement_texts(screen)
 
     # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
@@ -25,7 +26,8 @@ def statement_view(screen):
     # vaihtaa seuraavaan näkymään
     continue_button = ttk.Button(screen, text="Jatka", command=lambda:(
         show_pairless(),
-        hide_button(continue_button)
+        hide_button(continue_button),
+        remove_bolding(phase)
     ))
 
     # tarkistaa vastauksen

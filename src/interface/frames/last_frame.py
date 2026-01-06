@@ -10,6 +10,7 @@ from create_texts import end_texts
 def end_view(screen):
 
     # luo tekstit
+    bold_phase_text(screen, "6")
     end_texts(screen)
 
     # luo uuden framen tehtävälle

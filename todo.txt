@@ -23,4 +23,5 @@ osa tekstistä menee taas piiloon
 
 vilman muutosideat
 
-tee kommentoinnit lopuille tiedostoille ( framet )
+oudot välit vaihe-tekstien ympärillä
+    tekstin alussa rivinvaihto ei kai tee mitään

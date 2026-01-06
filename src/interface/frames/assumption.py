@@ -5,7 +5,6 @@ import tkinter as tk
 from tkinter import ttk
 import textfields
 from interface.edit_ui import *
-import logic
 from interface.frames.statement import *
 from interface.ui_handler import *
 from create_texts import starting_texts
@@ -20,6 +19,7 @@ def assumption_view(screen):
     label.pack(pady=(5,5))
 
     # luodaan tekstikentät ja lisätään niihin tekstit
+    phase = bold_phase_text(screen, "1")
     starting_texts(screen)
 
     # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
@@ -34,7 +34,8 @@ def assumption_view(screen):
     # jatka-nappi, joka vaihtaa toiseen näkymään
     continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
         show_statement(),
-        hide_button(continue_button)
+        hide_button(continue_button),
+        remove_bolding(phase)
     ))
 
     # tarkista tehtävä

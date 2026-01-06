@@ -11,7 +11,7 @@ alkusuunnitelma = "Ensin täytyy löytää oletus ja väite, jota ollaan ratkais
 alkuteksti = "Oletus on jokin tieto, josta lähdetään liikkeelle ja jota voimme pitää tunnettuna. Väite on jokin asia, jonka haluamme todistaa.\n\nLause 'Kahden parittoman kokonaisluvun tulo on pariton kokonaisluku' "
 alkuteksti += "voitaisiin myös ilmaista muodossa:\n\nJos [oletus], niin [väite].\n\nMerkitään lukuja kirjaimilla a ja b. Mikä oletus on?"
 
-oletuskysymys = "\nOletus:"
+oletuskysymys = "Oletus:"
 
 oletusvaihtoehdot = [
     "a ja b ovat parittomia kokonaislukuja",

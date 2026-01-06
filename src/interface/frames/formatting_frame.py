@@ -12,6 +12,7 @@ from create_texts import formatting_texts
 def formatting_view(screen):
 
     # lisää tekstit
+    phase = bold_phase_text(screen, "5")
     formatting_texts(screen)
 
     # luo uusi frame tehtävänäkymälle
@@ -30,7 +31,8 @@ def formatting_view(screen):
     continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
       hide_frame(excercise_frame),
       show_end(),
-      hide_button(continue_button)
+      hide_button(continue_button),
+      remove_bolding(phase)
     ))
 
     # tarkistaa vastauksen

@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter import Tk
 import textfields
+import tkinter.font as font
 
 # tee näytöstä hiirellä scrollattava
 def scrollable_screen(root):
@@ -60,6 +60,7 @@ def format_textfield(screen, text, color="black"):
     textfield.config(font=("Georgia", 12))
     format_textfield_size(textfield)
     textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5))
+    return textfield
 
 # luo ja pakkaa uuden framen
 def new_frame(screen):
@@ -129,6 +130,31 @@ def hide_frame(frame):
 # piilottaa napin
 def hide_button(button):
     button.pack_forget()
+
+# lisää tekstille tyyli
+def setup_text_styles(text_widget):
+    base_font = font.Font(text_widget, text_widget.cget("font"))
+
+    bold_font = base_font.copy()
+    bold_font.configure(weight="bold")
+
+    text_widget.tag_configure("bold", font=bold_font)
+
+# luo lihavoitu vaiheteksti
+def bold_phase_text(screen, number):
+    if number in [1,2]:
+        text = format_textfield(screen, f"[Vaihe {number}]", "#6a0dad")
+    elif number in [3,4]:
+        text = format_textfield(screen, f"\n[Vaihe {number}]\n", "#6a0dad")
+    else:
+        text = format_textfield(screen, f"[Vaihe {number}]\n", "#6a0dad")
+    setup_text_styles(text)
+    text.tag_add("bold", "1.0", "end")
+    return text
+
+# poista lihavointi
+def remove_bolding(text):
+    text.tag_remove("bold", "1.0", "end")
 
 # tekee popup-ikkunan
 def popup_window(screen, text):
