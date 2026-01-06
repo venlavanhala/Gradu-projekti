@@ -1,12 +1,12 @@
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
-import tkinter as tk
 from tkinter import ttk
 import textfields
 from interface.edit_ui import *
 from interface.frames.pairless_frame import *
 from interface.ui_handler import *
+from create_texts import statement_texts
 
 
 def statement_view(screen):

@@ -8,7 +8,9 @@ from interface.edit_ui import *
 import logic
 from interface.frames.statement import *
 from interface.ui_handler import *
+from create_texts import starting_texts
 
+# näkymä oletus-tehtävälle
 def assumption_view(screen):
 
     # luodaan tyhjä alapalkki
@@ -18,7 +20,6 @@ def assumption_view(screen):
     label.pack(pady=(5,5))
 
     # luodaan tekstikentät ja lisätään niihin tekstit
-
     starting_texts(screen)
 
     # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
@@ -27,13 +28,16 @@ def assumption_view(screen):
     # monivalintakysymys
     choose_assumption = new_combobox(frame, textfields.oletusvaihtoehdot)
 
+    # palaute-teksti
     feedback_label = new_label(frame)
 
+    # jatka-nappi, joka vaihtaa toiseen näkymään
     continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
         show_statement(),
         hide_button(continue_button)
     ))
 
+    # tarkista tehtävä
     check_assumption_answer = ttk.Button(
     frame,
     text="Tarkista",

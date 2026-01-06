@@ -8,7 +8,7 @@ tehtavananto = "Todista: Kahden parittoman luvun a ja b tulo on pariton luku."
 
 alkusuunnitelma = "Ensin täytyy löytää oletus ja väite, jota ollaan ratkaisemassa."
 
-alkuteksti = "Oletus on jokin tieto, josta lähdetään liikkeelle ja jota voimme pitää tunnettuna. Väite on jokin asia, jonka haluamme todistaa.\nLause 'Kahden parittoman kokonaisluvun tulo on pariton kokonaisluku' "
+alkuteksti = "Oletus on jokin tieto, josta lähdetään liikkeelle ja jota voimme pitää tunnettuna. Väite on jokin asia, jonka haluamme todistaa.\n\nLause 'Kahden parittoman kokonaisluvun tulo on pariton kokonaisluku' "
 alkuteksti += "voitaisiin myös ilmaista muodossa:\n\nJos [oletus], niin [väite].\n\nMerkitään lukuja kirjaimilla a ja b. Mikä oletus on?"
 
 oletuskysymys = "\nOletus:"
@@ -96,7 +96,7 @@ kirjoituspalautteet = ["Ensimmäisen kentän vastaus on väärin.", "Toisen kent
 
 kirjoitusteksti = "4kn + 2k + 2n + 1 = 2 \u00B7 (2kn + 1k + 1n) + 1"
 
-lopputeksti= "Parittomat kokonaisluvut pystytään aina kirjoittamaan muodossa 2p + 1, kun \u2208 \u2124. Koska saimme kirjoitettua luvun a \u00B7 b muodossa 2p + 1, "
+lopputeksti= "Parittomat kokonaisluvut pystytään aina kirjoittamaan muodossa 2p + 1, kun p \u2208 \u2124. Koska saimme kirjoitettua luvun a \u00B7 b muodossa 2p + 1, "
 lopputeksti += "sekin on kokonaisluku.\n\nLähdimme siis oletuksesta, että on kaksi paritonta kokonaislukua, ja päädyimme siihen, että niiden tulo on myös pariton. "
 lopputeksti += "Väite on täten todistettu.\n\n\u25A1"
 
@@ -137,6 +137,6 @@ kirjoituspalautteet_ = ["Ensimmäisen kentän vastaus on väärin.", "Toisen ken
 
 kirjoitusteksti_ = "4kn - 2k - 2n + 1 = 2 \u00B7 (2kn - 1k - 1n) + 1"
 
-lopputeksti_ = "Parittomat kokonaisluvut pystytään aina kirjoittamaan muodossa 2p - 1, kun \u2208 \u2124. Koska saimme kirjoitettua luvun a \u00B7 b muodossa 2p - 1, "
+lopputeksti_ = "Parittomat kokonaisluvut pystytään aina kirjoittamaan muodossa 2p - 1, kun p \u2208 \u2124. Koska saimme kirjoitettua luvun a \u00B7 b muodossa 2p - 1, "
 lopputeksti_ += "sekin on kokonaisluku.\n\nLähdimme siis oletuksesta, että on kaksi paritonta kokonaislukua, ja päädyimme siihen, että niiden tulo on myös pariton. "
 lopputeksti_ += "Väite on täten todistettu.\n\n\u25A1"

@@ -6,32 +6,31 @@ from tkinter import ttk
 import textfields
 from interface.edit_ui import *
 from interface.ui_handler import *
-import logic
-
+from create_texts import pairless_texts
 
 def pairless_view(screen):
 
-    # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
+    # luo tekstit
     pairless_texts(screen)
 
+    # luodaan frame tehtäväkentälle, joka piilotetaan myöhemmin näkyvistä
     frame = new_frame(screen)
-
-    # monivalintakysymys
 
     excercise_frame = new_frame(frame)
 
+    # entry-tehtävä
     write_formatting = new_entry(excercise_frame, "a=", " (k \u2208 \u2124)")
 
     feedback_label = new_label(frame)
 
-    # VAIHDA SEURAAVAAN
-
+    # vaihtaa seuraavaan näkymään
     continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
       hide_frame(excercise_frame),
       show_evidence(),
       hide_button(continue_button)
     ))
 
+    # tarkistaa vastauksen
     check_answer = ttk.Button(
     frame,
     text="Tarkista",
@@ -40,12 +39,14 @@ def pairless_view(screen):
     ))
     check_answer.pack(pady=5)
 
+    # luo vihjenapin, jota painaessa ilmestyy toinen vihje
     tip_pairless = ttk.Button(frame, text="Vihje", command=lambda: (
         popup_window(frame, textfields.pariton_vihje1),
         tip_2_pairless.pack(pady=(5, 10))))
     
     tip_pairless.pack(pady=(5, 5))
 
+    # toinen vihjenappi
     tip_2_pairless = ttk.Button(frame, text="Vihje 2", command=lambda: popup_window(frame, textfields.pariton_vihje2))
 
     return frame

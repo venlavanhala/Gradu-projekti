@@ -14,8 +14,12 @@ pitää asentaa pyinstaller ennen setuppia?
 
 voi olla, että asennettu omalle koneelle mutta ei virtuaaliympäristössä
 
-näyttö on liian alhaalla
-
 osa tekstistä menee taas piiloon
 
 jos teksti jää niin laita isännäksi screen
+
+onko "vaihe"-tekstit tarpeeksi näkyviä?
+
+pitäisikö alkuun kirjoittaa enemmän ohjeita: mainita esim. vinkeistä ja tekstin värin tarkoituksesta
+
+olisiko hyvä jos "taustateksti" kuitenkin katoaisi lopussa näkyvistä vaikkapa napin painalluksesta?

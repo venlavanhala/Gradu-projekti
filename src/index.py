@@ -6,9 +6,9 @@ from interface.ui_handler import *
 def main():
     root=Tk()
     screen = ui_handler.create_window(root)
-    # ensimmäinen näkymä
     ui_handler.init(screen)
     
+    # ensimmäinen näkymä
     ui_handler.start_assumption()
 
     root.mainloop()

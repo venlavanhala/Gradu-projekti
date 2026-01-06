@@ -6,11 +6,10 @@ from tkinter import ttk
 import textfields
 from interface.edit_ui import *
 from interface.ui_handler import *
-
+from create_texts import formatting_texts
 
 def formatting_view(screen):
 
-    # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
     formatting_texts(screen)
 
     frame = new_frame(screen)

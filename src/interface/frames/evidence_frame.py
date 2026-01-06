@@ -6,21 +6,20 @@ from tkinter import ttk
 import textfields
 from interface.edit_ui import *
 from interface.ui_handler import *
-import logic
+from create_texts import evidence_texts
 
-
+# näkymä osoitustehtävälle
 def evidence_view(screen):
 
-    # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
+    # luo tekstit
     evidence_texts(screen)
 
+    # luo framen tehtävälle
     frame = new_frame(screen)
-
-    # monivalintakysymys
 
     valittu = textfields.valittu
 
-    # tämä määritys muualle
+    # määritetään tehtävän vaihtoehdot ja kysymykset sen mukaan, mitä vastattiin aikaisemmassa tehtävässä
     if valittu == "2k+1":
       choose_proof_method = new_combobox(frame, textfields.osoitusvaihtoehdot)
       osoitusvastaus = textfields.osoitusvastaus
@@ -30,13 +29,16 @@ def evidence_view(screen):
       osoitusvastaus = textfields.osoitusvastaus_
       osoituspalautteet = textfields.osoituspalautteet_
 
+    # palaute-teksti
     feedback_label = new_label(frame)
 
+    # jatka seuraavaan näkymään
     continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
       show_formatting(),
       hide_button(continue_button)
     ))
 
+    # tarkista vastaus
     check_answer = ttk.Button(
     frame,
     text="Tarkista",

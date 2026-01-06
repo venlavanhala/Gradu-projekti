@@ -1,21 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
-import logic
 from tkinter import Tk
 import textfields
 
-# tekee näytöstä scrollattavan
-
-def create_window():
-    #jopa tämä alku voisi olla oma funktio edit_ui:ssa
-    screen = Tk()
-    screen.title("TkInter esimerkki")
-    screen.geometry("800x900") #näytön koko
-    screen.configure(bg="white")
-    # tee tässä myös scrollattava ikkuna
-    window = scrollable_screen(screen)
-    return window
-
+# tee näytöstä hiirellä scrollattava
 def scrollable_screen(root):
     canvas = tk.Canvas(root, bg="white", highlightthickness=0)
     scrollbar = tk.Scrollbar(root, orient="vertical", command=canvas.yview)
@@ -48,17 +36,14 @@ def scrollable_screen(root):
     return scrollable_frame
 
 
-# muotoilee tekstikentän muodon ja koon
+# muotoile tekstikentän muoto ja koko
 def format_textfield_size(textfield):
     textfield.config(font=("Georgia", 12))
     text = textfield.get("1.0", "end-1c")
     lines = text.split('\n')
     lines = [len(line) for line in lines]
-    height = text.count("\n\n")+max(lines)/60+len(lines) # tyhjät rivit + rivit + pisin rivi/leveys
+    height = text.count("\n\n")+max(lines)/60+len(lines)
     textfield.config(height=height, width=60, wrap="word", state=tk.DISABLED)
-    # lasketaan näkyvien rivien määrä
-
-# korkeus = \n määrä + pisin/12
 
 # muotoilee tekstikentän ja lisää tekstin
 def format_textfield(screen, text, color="black"):
@@ -76,8 +61,7 @@ def format_textfield(screen, text, color="black"):
     format_textfield_size(textfield)
     textfield.pack(fill="x", expand=False, padx=60, pady=(0, 5))
 
-
-# tekee ja pakkaa uuden framen
+# luo ja pakkaa uuden framen
 def new_frame(screen):
     frame = tk.Frame(screen, bg="white", pady=0)
     frame.pack(fill="none", expand=False)
@@ -132,13 +116,21 @@ def new_combobox(frame, text):
     excercise.pack(pady=(0,5))
     return excercise
 
+# luo labelin
 def new_label(frame):
     label = tk.Label(frame, text="", font=("Georgia", 12), bg="white")
     label.pack(pady=5)
     return label
 
-# piilotetaan edellinen näyttö ja näytetään seuraava frame
+# piilottaa framen
+def hide_frame(frame):
+    frame.destroy()
 
+# piilottaa napin
+def hide_button(button):
+    button.pack_forget()
+
+# tekee popup-ikkunan
 def popup_window(screen, text):
     popup = tk.Toplevel(screen)
     popup.title("Vihje")
@@ -148,8 +140,8 @@ def popup_window(screen, text):
 
     tk.Button(popup, text="Sulje", command=popup.destroy).pack(pady=5)
 
-# oikea vastaus 
-def render_combobox_right_answer(answer,feedback, screen, combobox, label, checkbutton, continue_button):
+# luo näytölle palautteen oikeasta vastauksesta ja muokkaa napit seuraavaa näkymää varten
+def show_combobox_right_answer(answer,feedback, screen, combobox, label, checkbutton, continue_button):
     label.config(text=feedback[answer], fg="green", font=("Georgia", 12))
     textfield = tk.Text(
     master=screen,
@@ -168,10 +160,12 @@ def render_combobox_right_answer(answer,feedback, screen, combobox, label, check
     combobox.configure(state="disabled")
     return textfield
 
-def render_combobox_wrong_answer(answer,feedback, label):
+# luo näytölle palautteen väärästä vastauksesta
+def show_combobox_wrong_answer(answer,feedback, label):
     label.config(text=feedback[answer], fg="blue")
 
-def format_pairless_answer(answer, feedback, label, screen, checkbutton, continue_button):
+# näyttää palautteen oikeasta vastauksesta pariton-tehtävässä ja muokkaa napit seuraavaa näkymää varten
+def show_pairless_answer(answer, feedback, label, screen, checkbutton, continue_button):
     label.config(text=feedback[answer], fg="green", font=("Georgia", 12))
     textfield = tk.Text(
     master=screen,
@@ -188,34 +182,20 @@ def format_pairless_answer(answer, feedback, label, screen, checkbutton, continu
     checkbutton.pack_forget()
     continue_button.pack()
 
-def entry_right_answer(answer, feedback, label, frame):
-    label.config(text=feedback[answer], fg="green", font=("Georgia", 12))
-    textfield = tk.Text(
-    master=frame,
-    font=("Arial", 12),
-    wrap="word",
-    bg="white",
-    relief="flat",
-    borderwidth=0,
-    highlightthickness=0
-    )
-    textfield.insert("1.0", answer)
-    format_textfield_size(textfield)
-    textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
-
+# näyttää palautteen väärästä vastauksesta
 def entry_wrong_answer(label):
     label.config(text="Yritä uudestaan!", fg="blue")
 
-
+# näyttää palautteen väärästä vastauksesta muotoilu-tehtävässä
 def format_wrong_answer(result, feedback_label):
     if result[0]==False:
         feedback_label.config(text=textfields.kirjoituspalautteet[0], fg="blue", font=("Georgia", 12))
-    if result[1]==False:
+    elif result[1]==False:
         feedback_label.config(text=textfields.kirjoituspalautteet[1], fg="blue", font=("Georgia", 12))
-    if result[2]==False:
+    elif result[2]==False:
         feedback_label.config(text=textfields.kirjoituspalautteet[2], fg="blue", font=("Georgia", 12))
 
-
+# näyttää palautteen oikeasta vastauksesta muotoilu-tehtävässä ja muokkaa napit seuraavaa näkymää varten
 def format_right_answer(label, screen, checkbutton, continue_button):
     label.config(text="Oikein!", fg="green", font=("Georgia", 12))
     textfield = tk.Text(
@@ -235,3 +215,4 @@ def format_right_answer(label, screen, checkbutton, continue_button):
     textfield.pack(fill="x", expand=False,padx=60, pady=(0, 5))
     checkbutton.pack_forget()
     continue_button.pack()
+
