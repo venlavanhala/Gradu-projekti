@@ -8,28 +8,32 @@ from interface.edit_ui import *
 from interface.ui_handler import *
 from create_texts import formatting_texts
 
+# näkymä muotoilutehtävälle
 def formatting_view(screen):
 
+    # lisää tekstit
     formatting_texts(screen)
 
+    # luo uusi frame tehtävänäkymälle
     frame = new_frame(screen)
 
-    # monivalintakysymys
-
+    # luo frame vastauskentälle
     excercise_frame = new_frame(frame)
 
+    # tekee kirjoitustehtävän
     choose_answer = create_formatting_entries(excercise_frame, textfields.valittu)
 
+    # luo palautetekstin
     feedback_label = new_label(frame)
 
-    # VAIHDA SEURAAVA FRAME
-
+    # vaihtaa seuraavan framen
     continue_button = ttk.Button(screen, text="Jatka", command=lambda: (
       hide_frame(excercise_frame),
       show_end(),
       hide_button(continue_button)
     ))
 
+    # tarkistaa vastauksen
     check_answer = ttk.Button(
     frame,
     text="Tarkista",

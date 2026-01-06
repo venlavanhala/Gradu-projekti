@@ -8,6 +8,7 @@ from interface.edit_ui import *
 from interface.ui_handler import *
 from create_texts import pairless_texts
 
+# luo näkymän pariton-tehtävälle
 def pairless_view(screen):
 
     # luo tekstit
@@ -16,9 +17,10 @@ def pairless_view(screen):
     # luodaan frame tehtäväkentälle, joka piilotetaan myöhemmin näkyvistä
     frame = new_frame(screen)
 
+    # luo framen vastauskentälle
     excercise_frame = new_frame(frame)
 
-    # entry-tehtävä
+    # luo entry-tehtävän
     write_formatting = new_entry(excercise_frame, "a=", " (k \u2208 \u2124)")
 
     feedback_label = new_label(frame)

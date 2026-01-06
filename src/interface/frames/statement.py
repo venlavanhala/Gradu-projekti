@@ -8,28 +8,27 @@ from interface.frames.pairless_frame import *
 from interface.ui_handler import *
 from create_texts import statement_texts
 
-
+# luo näkymän oletustehtävälle
 def statement_view(screen):
 
-
+    # luo tekstit
     statement_texts(screen)
 
     # luodaan frame monivalintakentälle, joka piilotetaan myöhemmin näkyvistä
     frame = new_frame(screen)
 
-    # monivalintakysymys
+    # luo monivalintakysymyksen
     choose_statement = new_combobox(frame, textfields.vaitevaihtoehdot)
 
     feedback_label = new_label(frame)
 
-    # VAIHDA SEURAAVAAN
-
+    # vaihtaa seuraavaan näkymään
     continue_button = ttk.Button(screen, text="Jatka", command=lambda:(
         show_pairless(),
         hide_button(continue_button)
     ))
 
-
+    # tarkistaa vastauksen
     check_answer = ttk.Button(
     frame,
     text="Tarkista",

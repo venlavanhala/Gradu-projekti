@@ -6,10 +6,13 @@ from interface.frames.statement import *
 from interface.ui_handler import *
 from create_texts import end_texts
 
+# luo viimeisen näkymän
 def end_view(screen):
 
+    # luo tekstit
     end_texts(screen)
 
+    # luo uuden framen tehtävälle
     frame = new_frame(screen)
 
     return frame
