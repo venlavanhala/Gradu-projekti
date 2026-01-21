@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
-johdanto = "Tässä harjoituksessa tutustutaan erään lukuteorian lauseen todistamiseen. Saat scrollattua näkymää näytön oikeasta reunasta. Mieti kysymyksiä ensin itse ja katso vasta sitten mahdolliset vastausvaihtoehdot!"
+johdanto = "Tässä harjoituksessa tutustutaan erään lukuteorian lauseen todistamiseen. Saat scrollattua näkymää hiirellä ja näytön oikeasta reunasta. Mieti kysymyksiä ensin itse ja katso vasta sitten mahdolliset vastausvaihtoehdot!"
 
 tehtavananto = "Todista: Kahden parittoman luvun a ja b tulo on pariton luku."
 
