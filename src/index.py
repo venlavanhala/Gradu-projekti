@@ -1,7 +1,5 @@
 from tkinter import Tk
 from interface import ui_handler
-from interface.edit_ui import *
-from interface.ui_handler import *
 
 def main():
     root=Tk()
