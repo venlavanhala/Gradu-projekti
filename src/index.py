@@ -1,10 +1,17 @@
 from tkinter import Tk
-from ui import UI
+from interface import ui_handler
+from interface.edit_ui import *
+from interface.ui_handler import *
 
-window = Tk()
-window.title("TkInter esimerkki")
+def main():
+    root=Tk()
+    screen = ui_handler.create_window(root)
+    ui_handler.init(screen)
+    
+    # ensimmäinen näkymä
+    ui_handler.start_assumption()
 
-ui = UI(window)
-ui.start()
+    root.mainloop()
 
-window.mainloop()
+if __name__ == "__main__":
+    main()

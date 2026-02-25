@@ -19,8 +19,9 @@ pitää asentaa pyinstaller ennen setuppia?
 
 voi olla, että asennettu omalle koneelle mutta ei virtuaaliympäristössä
 
-voi olla 2k-1 -> ota huomioon
-
-näyttö on liian alhaalla
-
 osa tekstistä menee taas piiloon
+
+vilman muutosideat
+
+oudot välit vaihe-tekstien ympärillä
+    tekstin alussa rivinvaihto ei kai tee mitään

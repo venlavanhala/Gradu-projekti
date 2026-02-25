@@ -1,0 +1,25 @@
+Nyt uusin toimiva versio frame_to_object branchissa
+
+mieti toimintoja uudelleen
+    - onko jotain turhaa?
+    - voiko tehdä yksinkertaisemmin tai paremmin?
+
+tietoboksit eri näköisiksi kuin todistusosio
+
+windows & mac toimivuudet
+
+halutaanko hyödyntää poetryä ohjelman suorituksessa? nyt se ei ehkä ole mukana
+
+pitää asentaa pyinstaller ennen setuppia?
+
+voi olla, että asennettu omalle koneelle mutta ei virtuaaliympäristössä
+
+osa tekstistä menee taas piiloon
+
+jos teksti jää niin laita isännäksi screen
+
+onko "vaihe"-tekstit tarpeeksi näkyviä?
+
+pitäisikö alkuun kirjoittaa enemmän ohjeita: mainita esim. vinkeistä ja tekstin värin tarkoituksesta
+
+olisiko hyvä jos "taustateksti" kuitenkin katoaisi lopussa näkyvistä vaikkapa napin painalluksesta?
